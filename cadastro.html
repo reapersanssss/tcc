@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POWERBODY - Cadastro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <h1>POWERBODY</h1>
+            <ul>
+        <li><a href="index.html" class="ativo">Home</a></li>
+        <li><a href="aulas.html">Aulas</a></li>
+        <li><a href="imc.html">Calculadora IMC</a></li>
+        <li><a href="nutricao.html">Nutrição</a></li>
+        <li><a href="planos.html">Planos</a></li>
+        <li><a href="contato.html">Contato</a></li>
+        <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section>
+        <h2>Cadastro</h2>
+        <form id="cadastroForm">
+            <label>Nome: <input type="text" id="nome" required></label>
+            <label>Email: <input type="email" id="email" required></label>
+            <label>Usuário: <input type="text" id="usuario" required></label>
+            <label>Senha: <input type="password" id="senha" required></label>
+            <label>Confirmar Senha: <input type="password" id="confirmaSenha" required></label>
+            <button type="submit">Cadastrar</button>
+        </form>
+        <p id="msgCadastro"></p>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 POWERBODY. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

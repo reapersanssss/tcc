@@ -1,0 +1,413 @@
+/* RESET BÁSICO */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: #121212; /* fundo escuro */
+    color: #e0e0e0;      /* texto claro */
+    line-height: 1.6;
+}
+
+/* CABEÇALHO / NAVBAR */
+header {
+    background: #1f1f1f; /* escuro */
+    padding: 15px 0;
+    color: #fff;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.5);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    max-width: 1100px;
+    margin: auto;
+}
+
+nav h1 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #1abc9c;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li a {
+    color: #e0e0e0;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px 10px;
+    transition: background 0.3s, border-radius 0.3s;
+}
+
+nav ul li a:hover {
+    background: #1abc9c;
+    color: #fff;
+    border-radius: 5px;
+}
+
+/* SEÇÕES */
+section {
+    padding: 50px 20px;
+    margin: 20px auto;
+    width: 90%;
+    max-width: 900px;
+    background: #1f1f1f;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+    text-align: center;
+}
+
+section h2 {
+    margin-bottom: 20px;
+    color: #1abc9c;
+}
+
+/* LISTAS */
+ul li {
+    background: #2c2c2c;
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+/* FORMULÁRIOS */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 400px;
+    margin: auto;
+}
+
+input, textarea, button {
+    padding: 12px;
+    border-radius: 5px;
+    border: 1px solid #333;
+    font-size: 1rem;
+    background: #2c2c2c;
+    color: #e0e0e0;
+}
+
+textarea {
+    resize: vertical;
+}
+
+/* BOTÕES */
+button {
+    background: #1abc9c;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s, transform 0.2s;
+}
+
+button:hover {
+    background: #16a085;
+    transform: translateY(-2px);
+}
+
+/* MENSAGENS DE RESULTADO */
+#resultadoIMC, #msgContato, #msgLogin {
+    margin-top: 15px;
+    font-weight: bold;
+    color: #1abc9c;
+}
+
+/* FOOTER */
+footer {
+    background: #1f1f1f;
+    color: #e0e0e0;
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+    box-shadow: 0 -4px 6px rgba(0,0,0,0.5);
+}
+
+/* RESPONSIVO */
+@media(max-width: 768px) {
+    nav {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+.botao-cadastro {
+    display: inline-block;
+    padding: 8px 15px;
+    background: #1abc9c;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.botao-cadastro:hover {
+    background: #16a085;
+    transform: translateY(-2px);
+}
+
+.card-exercicio {
+    background: #2c2c2c; /* fundo escuro */
+    padding: 20px;
+    border-radius: 10px;
+    margin: 15px 0;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.5);
+    text-align: left;
+    color: #e0e0e0;
+    transition: transform 0.3s, background 0.3s;
+}
+
+.card-exercicio:hover {
+    transform: translateY(-5px);
+    background: #1f1f1f;
+}
+
+.card-exercicio h3 {
+    color: #1abc9c;
+    margin-bottom: 10px;
+}
+
+.card-exercicio p {
+    margin-bottom: 8px;
+}
+
+.card-exercicio {
+    background: #2c2c2c;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 15px 0;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.5);
+    text-align: left;
+    color: #e0e0e0;
+    transition: transform 0.3s, background 0.3s;
+}
+
+.card-exercicio:hover {
+    transform: translateY(-5px);
+    background: #1f1f1f;
+}
+
+.card-exercicio h3 {
+    color: #1abc9c;
+    margin-bottom: 10px;
+}
+
+.card-aula{
+  display:block;
+  padding:15px;
+  margin:10px 0;
+  text-align:center;
+  border-radius:8px;
+  text-decoration:none;
+  font-weight:bold;
+  background:#2c2c2c;   /* dark */
+  color:#e0e0e0;
+  transition:background .3s, transform .2s;
+}
+.card-aula:hover{ background:#1abc9c; color:#fff; transform:translateY(-3px); }
+
+.card-exercicio{
+  background:#2c2c2c; color:#e0e0e0;
+  padding:20px; border-radius:10px; margin:15px 0;
+  box-shadow:0 4px 6px rgba(0,0,0,.5);
+  transition:transform .3s, background .3s;
+}
+.card-exercicio:hover{ transform:translateY(-4px); background:#1f1f1f; }
+
+.campo select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #444;
+  background: #2c2c2c;
+  color: #fff;
+}
+
+/* ==== CARDS DE NUTRIÇÃO ==== */
+.card-nutricao {
+  background: #2e3b2f;           /* fundo verde escuro */
+  color: #e0e0e0;                /* texto claro */
+  padding: 20px;
+  border-radius: 10px;
+  margin: 15px 0;
+  border-left: 5px solid #27ae60; /* borda verde lateral */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s, background 0.3s;
+}
+
+.card-nutricao:hover {
+  transform: translateY(-4px);
+  background: #344f38;           /* destaque no hover */
+}
+
+.profissionais {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.card-profissional {
+  background: #2c2c2c;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  flex: 1 1 250px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.5);
+  transition: transform 0.3s;
+}
+
+.card-profissional:hover {
+  transform: translateY(-5px);
+}
+
+.card-profissional img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 15px;
+  border: 3px solid #1abc9c;
+}
+
+.card-profissional h3 {
+  color: #1abc9c;
+  margin-bottom: 10px;
+}
+
+.card-profissional p {
+  font-size: 0.9rem;
+  margin-bottom: 15px;
+}
+
+.card-profissional .btn {
+  display: inline-block;
+  padding: 8px 15px;
+  border-radius: 5px;
+  background: #1abc9c;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.card-profissional .btn:hover {
+  background: #16a085;
+}
+
+.img-exercicio {
+  width: 100%;
+  max-width: 500px;
+  display: block;
+  margin: 10px auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+}
+
+.card-exercicio h3 a {
+  color: #1abc9c;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.card-exercicio h3 a:hover {
+  color: #16a085;
+}
+
+.planos {
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.container-planos {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.plano {
+  background: #222;
+  color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  width: 280px;
+  box-shadow: 0px 5px 15px rgba(0,0,0,0.3);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.plano:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 10px 20px rgba(0,0,0,0.5);
+}
+
+.plano h3 {
+  color: #1abc9c;
+  margin-bottom: 10px;
+}
+
+.plano .preco {
+  font-size: 1.5em;
+  margin: 10px 0;
+  color: #0f0;
+}
+
+.plano ul {
+  list-style: none;
+  padding: 0;
+  margin: 15px 0;
+  text-align: left;
+}
+
+.plano ul li {
+  margin: 8px 0;
+  padding-left: 20px;
+  position: relative;
+}
+
+.plano ul li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  color: #1abc9c;
+}
+
+.plano button {
+  background: #1abc9c;
+  border: none;
+  color: #fff;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.plano button:hover {
+  background: #16a085;
+}
+
+.destaque {
+  border: 2px solid #1abc9c;
+  transform: scale(1.05);
+}
+

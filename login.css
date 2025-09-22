@@ -1,0 +1,104 @@
+/* ===== RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #000; /* fundo preto */
+  color: #fff;            /* texto branco */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* ===== CONTAINER ===== */
+.container {
+  background-color: #1a1a1a; /* fundo escuro do container */
+  padding: 40px;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 8px 16px rgba(1, 175, 132, 0.3); /* sombra vermelha */
+}
+
+/* ===== ABAS ===== */
+.tabs {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+.tabs button {
+  background: transparent;
+  border: none;
+  color: #bbb;             /* cor padrão das abas */
+  font-size: 18px;
+  cursor: pointer;
+  padding: 10px 20px;
+  border-bottom: 2px solid transparent;
+  transition: all 0.3s;
+}
+
+.tabs button.active {
+  color: #1abc9c !important;  /* vermelho escuro */
+  background: transparent !important; /* garante sem fundo */
+  border-bottom: 2px solid #b91c1c; /* underline vermelho escuro */
+}
+
+/* ===== FORMULÁRIOS ===== */
+.form {
+  display: none;
+  flex-direction: column;
+}
+
+.form.active {
+  display: flex;
+}
+
+.field {
+  margin-bottom: 20px;
+}
+
+.field input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #333;
+  background-color: #111; /* fundo escuro dos inputs */
+  color: #fff;            /* texto branco */
+  font-size: 16px;
+}
+
+/* ===== BOTÕES ===== */
+.btn {
+  background-color: #b91c1c; /* botão vermelho escuro */
+  color: #fff;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background-color: #7f1212; /* vermelho mais escuro ao passar o mouse */
+}
+
+/* ===== MENSAGENS ===== */
+.msg {
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.msg.error {
+  color: #b91c1c; /* vermelho escuro para erros */
+}
+
+.msg.success {
+  color: #22c55e; /* verde para sucesso */
+}

@@ -1,0 +1,77 @@
+Login e cadastro 
+
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login / Cadastro - ROCKBAND</title>
+  <link rel="stylesheet" href="login.css">
+</head>
+<body>
+  <div class="container" id="authContainer">
+    <!-- Abas -->
+    <div class="tabs">
+      <button id="tabLogin" class="active">Login</button>
+      <button id="tabCadastro">Cadastro</button>
+    </div>
+
+    <!-- Formulário de Login -->
+    <form id="loginForm" class="form active">
+      <div class="field">
+        <input type="email" id="loginEmail" placeholder="Email" required>
+      </div>
+      <div class="field">
+        <input type="password" id="loginPass" placeholder="Senha" required>
+      </div>
+      <button type="submit" class="btn">Entrar</button>
+      <div id="loginMsg" class="msg"></div>
+    </form>
+
+    <!-- Formulário de Cadastro -->
+    <form id="cadastroForm" class="form">
+      <div class="field">
+        <input type="email" id="cadastroEmail" placeholder="Email" required>
+      </div>
+      <div class="field">
+        <input type="password" id="cadastroPass" placeholder="Senha" required>
+      </div>
+      <div class="field">
+        <input type="text" id="cadastroName" placeholder="Nome" required>
+      </div>
+      <button type="submit" class="btn">Cadastrar</button>
+      <div id="cadastroMsg" class="msg"></div>
+    </form>
+  </div>
+
+  <!-- Supabase CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/supabase.min.js"></script>
+<script type="module" src="auth.js"></script>
+
+
+  <!-- Alternar abas -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const tabLogin = document.getElementById("tabLogin");
+      const tabCadastro = document.getElementById("tabCadastro");
+      const loginForm = document.getElementById("loginForm");
+      const cadastroForm = document.getElementById("cadastroForm");
+
+      tabLogin.addEventListener("click", () => {
+        tabLogin.classList.add("active");
+        tabCadastro.classList.remove("active");
+        loginForm.classList.add("active");
+        cadastroForm.classList.remove("active");
+      });
+
+      tabCadastro.addEventListener("click", () => {
+        tabCadastro.classList.add("active");
+        tabLogin.classList.remove("active");
+        cadastroForm.classList.add("active");
+        loginForm.classList.remove("active");
+      });
+    });
+  </script>
+</body>
+</html>

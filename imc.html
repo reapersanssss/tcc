@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>POWERBODY - Calculadora IMC</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <h1>POWERBODY</h1>
+      <ul>
+        <li><a href="index.html" class="ativo">Home</a></li>
+        <li><a href="aulas.html">Aulas</a></li>
+        <li><a href="imc.html">Calculadora IMC</a></li>
+        <li><a href="nutricao.html">Nutrição</a></li>
+        <li><a href="planos.html">Planos</a></li>
+        <li><a href="contato.html">Contato</a></li>
+        <li><a href="login.html">Login</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section>
+    <h2>Calculadora de IMC</h2>
+    <form id="imcForm">
+      <div class="campo">
+        <label for="peso">Peso (kg):</label>
+        <input type="number" id="peso" placeholder="Ex: 70" required>
+      </div>
+     <div class="campo">
+  <label for="altura">Altura (cm):</label>
+  <input type="number" id="altura" placeholder="Ex: 175" required>
+</div>
+      <div class="campo">
+        <label for="idade">Idade:</label>
+        <input type="number" id="idade" placeholder="Ex: 25" required>
+      </div>
+      <div class="campo">
+        <label for="genero">Gênero:</label>
+        <select id="genero" required>
+          <option value="">Selecione...</option>
+          <option value="masculino">Masculino</option>
+          <option value="feminino">Feminino</option>
+        </select>
+      </div>
+      <button type="submit">Calcular</button>
+    </form>
+
+    <div id="resultadoBox" class="resultado-box">
+      <p id="resultadoIMC"></p>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 POWERBODY. Todos os direitos reservados.</p>
+  </footer>
+
+  <script>
+    document.getElementById('imcForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+
+  let peso = parseFloat(document.getElementById('peso').value);
+  let alturaCm = parseFloat(document.getElementById('altura').value);
+  let altura = alturaCm / 100; // conversão de cm para m
+  let idade = parseInt(document.getElementById('idade').value);
+  let genero = document.getElementById('genero').value;
+
+  if (peso <= 0 || alturaCm <= 0 || idade <= 0 || genero === "") {
+    document.getElementById('resultadoIMC').textContent = "Preencha todos os campos corretamente!";
+    document.getElementById('resultadoBox').style.background = "#ff4d4d";
+    return;
+  }
+
+  let imc = (peso / (altura * altura)).toFixed(2);
+      let cor = "";
+
+      if (imc < 18.5) {
+        classificacao = "Abaixo do Peso";
+        cor = "#f39c12";
+      } else if (imc < 24.9) {
+        classificacao = "Peso Normal";
+        cor = "#2ecc71";
+      } else if (imc < 29.9) {
+        classificacao = "Sobrepeso";
+        cor = "#f1c40f";
+      } else if (imc < 34.9) {
+        classificacao = "Obesidade Grau I";
+        cor = "#e67e22";
+      } else if (imc < 39.9) {
+        classificacao = "Obesidade Grau II";
+        cor = "#e74c3c";
+      } else {
+        classificacao = "Obesidade Grau III (mórbida)";
+        cor = "#c0392b";
+      }
+
+      let mensagemExtra = "";
+      if (idade < 18) {
+        mensagemExtra = " (Atenção: para menores de 18 anos, use curvas de crescimento específicas)";
+      } else if (idade >= 60) {
+        mensagemExtra = " (Atenção: em idosos, o IMC pode ter interpretação diferente)";
+      }
+
+      document.getElementById('resultadoIMC').textContent = 
+        `Seu IMC é ${imc} (${classificacao}) - ${genero}, ${idade} anos${mensagemExtra}`;
+      document.getElementById('resultadoBox').style.background = cor;
+    });
+  </script>
+</body>
+</html>
