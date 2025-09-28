@@ -1,104 +1,94 @@
-// Calculadora de IMC
-if(document.getElementById('imcForm')){
-    document.getElementById('imcForm').addEventListener('submit', function(e) {
-        e.preventDefault();
-        let peso = parseFloat(document.getElementById('peso').value);
-        let altura = parseFloat(document.getElementById('altura').value);
-        let imc = peso / (altura * altura);
-        imc = imc.toFixed(2);
-        document.getElementById('resultadoIMC').textContent = `Seu IMC é ${imc}`;
-    });
+// 🔑 Conexão com Supabase
+const SUPABASE_URL = "https://SEU-PROJETO.supabase.co";
+const SUPABASE_ANON_KEY = "SUA_CHAVE_ANON_PUBLIC";
+const client = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+// === CALCULADORA DE IMC ===
+if (document.getElementById('imcForm')) {
+  document.getElementById('imcForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+    let peso = parseFloat(document.getElementById('peso').value);
+    let alturaCm = parseFloat(document.getElementById('altura').value);
+    let altura = alturaCm / 100; // cm -> m
+
+    let imc = peso / (altura * altura);
+    imc = imc.toFixed(2);
+    document.getElementById('resultadoIMC').textContent = `Seu IMC é ${imc}`;
+  });
 }
 
-// Contato
-if(document.getElementById('contatoForm')){
-    document.getElementById('contatoForm').addEventListener('submit', function(e){
-        e.preventDefault();
-        document.getElementById('msgContato').textContent = "Mensagem enviada com sucesso!";
-        this.reset();
-    });
+// === CONTATO ===
+if (document.getElementById('contatoForm')) {
+  document.getElementById('contatoForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+    document.getElementById('msgContato').textContent = "Mensagem enviada com sucesso!";
+    this.reset();
+  });
 }
 
-// Login simples
-if(document.getElementById('loginForm')){
-    document.getElementById('loginForm').addEventListener('submit', function(e){
-        e.preventDefault();
-        let usuario = this.querySelector('input[type="text"]').value;
-        let senha = this.querySelector('input[type="password"]').value;
+// === LOGIN COM SUPABASE ===
+if (document.getElementById('loginForm')) {
+  document.getElementById('loginForm').addEventListener('submit', async function (e) {
+    e.preventDefault();
+    let email = document.getElementById('email').value;
+    let senha = document.getElementById('password').value;
 
-        if(usuario === "admin" && senha === "1234"){
-            document.getElementById('msgLogin').textContent = "Login realizado com sucesso!";
-        } else {
-            document.getElementById('msgLogin').textContent = "Usuário ou senha incorretos!";
-        }
+    const { data, error } = await client.auth.signInWithPassword({
+      email: email,
+      password: senha
     });
+
+    if (error) {
+      document.getElementById('msgLogin').textContent = "Erro: " + error.message;
+      document.getElementById('msgLogin').style.color = "red";
+    } else {
+      document.getElementById('msgLogin').textContent = "Login realizado com sucesso!";
+      document.getElementById('msgLogin').style.color = "green";
+      setTimeout(() => window.location.href = "index.html", 1000);
+    }
+  });
 }
 
-// Calculadora de IMC
-if(document.getElementById('imcForm')){
-    document.getElementById('imcForm').addEventListener('submit', function(e) {
-        e.preventDefault();
-       let peso = parseFloat(document.getElementById('peso').value);
-let alturaCm = parseFloat(document.getElementById('altura').value);
-let altura = alturaCm / 100; // converte cm para m
+// === CADASTRO COM SUPABASE ===
+if (document.getElementById('cadastroForm')) {
+  document.getElementById('cadastroForm').addEventListener('submit', async function (e) {
+    e.preventDefault();
 
-        let imc = peso / (altura * altura);
-        imc = imc.toFixed(2);
-        document.getElementById('resultadoIMC').textContent = `Seu IMC é ${imc}`;
+    let nome = document.getElementById('nome').value;
+    let email = document.getElementById('email').value;
+    let senha = document.getElementById('senha').value;
+    let confirmaSenha = document.getElementById('confirmaSenha').value;
+    let idade = document.getElementById('idade')?.value || null;
+    let genero = document.getElementById('genero')?.value || null;
+
+    if (senha !== confirmaSenha) {
+      document.getElementById('msgCadastro').textContent = "As senhas não coincidem!";
+      document.getElementById('msgCadastro').style.color = "red";
+      return;
+    }
+
+    const { data, error } = await client.auth.signUp({
+      email,
+      password: senha
     });
+
+    if (error) {
+      document.getElementById('msgCadastro').textContent = "Erro: " + error.message;
+      document.getElementById('msgCadastro').style.color = "red";
+    } else {
+      const user = data.user;
+
+      // salva dados extras na tabela profiles
+      if (user) {
+        await client.from("profiles").insert([
+          { id: user.id, nome, idade, genero }
+        ]);
+      }
+
+      document.getElementById('msgCadastro').textContent = "Cadastro realizado com sucesso!";
+      document.getElementById('msgCadastro').style.color = "#1abc9c";
+
+      setTimeout(() => window.location.href = "index.html", 1000);
+    }
+  });
 }
-
-// Contato
-if(document.getElementById('contatoForm')){
-    document.getElementById('contatoForm').addEventListener('submit', function(e){
-        e.preventDefault();
-        document.getElementById('msgContato').textContent = "Mensagem enviada com sucesso!";
-        this.reset();
-    });
-}
-
-// Login simples
-if(document.getElementById('loginForm')){
-    document.getElementById('loginForm').addEventListener('submit', function(e){
-        e.preventDefault();
-        let usuario = this.querySelector('input[type="text"]').value;
-        let senha = this.querySelector('input[type="password"]').value;
-
-        // Aqui você pode integrar com banco ou armazenamento local
-        if(usuario === "admin" && senha === "1234"){
-            document.getElementById('msgLogin').textContent = "Login realizado com sucesso!";
-        } else {
-            document.getElementById('msgLogin').textContent = "Usuário ou senha incorretos!";
-        }
-    });
-}
-
-// Cadastro simples
-if(document.getElementById('cadastroForm')){
-    document.getElementById('cadastroForm').addEventListener('submit', function(e){
-        e.preventDefault();
-
-        let nome = document.getElementById('nome').value;
-        let email = document.getElementById('email').value;
-        let usuario = document.getElementById('usuario').value;
-        let senha = document.getElementById('senha').value;
-        let confirmaSenha = document.getElementById('confirmaSenha').value;
-
-        if(senha !== confirmaSenha){
-            document.getElementById('msgCadastro').textContent = "As senhas não coincidem!";
-            document.getElementById('msgCadastro').style.color = "red";
-            return;
-        }
-
-        // Armazenar usuário no localStorage (exemplo simples)
-        let usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
-        usuarios.push({nome, email, usuario, senha});
-        localStorage.setItem('usuarios', JSON.stringify(usuarios));
-
-        document.getElementById('msgCadastro').textContent = "Cadastro realizado com sucesso!";
-        document.getElementById('msgCadastro').style.color = "#1abc9c";
-        this.reset();
-    });
-}
-
-

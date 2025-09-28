@@ -3,67 +3,65 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>POWERBODY - Home</title>
+  <title>Fitness Pro - Home</title>
   <link rel="stylesheet" href="style.css">
+  <script src="https://unpkg.com/@supabase/supabase-js"></script>
 </head>
 <body>
   <header>
     <nav>
-      <h1>POWERBODY</h1>
+      <h1>Fitness Pro</h1>
       <ul>
         <li><a href="index.html" class="ativo">Home</a></li>
+        <li><a href="#sobre">Sobre</a></li>
         <li><a href="aulas.html">Aulas</a></li>
         <li><a href="imc.html">Calculadora IMC</a></li>
         <li><a href="nutricao.html">Nutrição</a></li>
         <li><a href="planos.html">Planos</a></li>
         <li><a href="contato.html">Contato</a></li>
-        <li><a href="login.html">Login</a></li>
+        <li><button id="logoutBtn">Sair</button></li>
       </ul>
     </nav>
   </header>
 
   <!-- Hero Section -->
   <section class="hero">
-    <h2>Transforme sua vida com o POWERBODY</h2>
+    <h2>Transforme sua vida com o Fitness Pro</h2>
     <p>Treinos, nutrição e planos sob medida para você atingir seus objetivos.</p>
     <a href="planos.html" class="btn">Comece Agora</a>
   </section>
 
-  <!-- Destaques -->
-  <section class="destaques">
-    <h2>O que oferecemos</h2>
-    <div class="cards">
-      <div class="card">
-        <h3>Treinos Personalizados</h3>
-        <p>Aulas de musculação, yoga, pilates, HIIT e funcional adaptadas ao seu nível.</p>
-      </div>
-      <div class="card">
-        <h3>Acompanhamento</h3>
-        <p>Nutricionistas e treinadores para ajudar você a evoluir com saúde.</p>
-      </div>
-      <div class="card">
-        <h3>Resultados Reais</h3>
-        <p>Ferramentas como a calculadora de IMC e planos que se ajustam à sua rotina.</p>
-      </div>
-    </div>
-  </section>
-
   <!-- Sobre -->
   <section id="sobre" class="sobre">
-    <h2>Sobre o POWERBODY</h2>
-    <p>O <strong>POWERBODY</strong> nasceu com a missão de tornar a saúde e o bem-estar acessíveis a todos. 
+    <h2>Sobre o Fitness Pro</h2>
+    <p>O <strong>Fitness Pro</strong> nasceu com a missão de tornar a saúde e o bem-estar acessíveis a todos. 
     Nosso site reúne treinos variados, acompanhamento nutricional e planos que cabem no seu bolso.</p>
-
-    <h3>Nossa missão</h3>
-    <p>Oferecer ferramentas práticas e acessíveis para ajudar pessoas a terem uma vida mais saudável.</p>
-
-    <h3>Nosso time</h3>
-    <p>Somos uma equipe de profissionais apaixonados por fitness, nutrição e tecnologia. 
-    Juntos, buscamos levar até você um suporte completo para atingir seus objetivos.</p>
   </section>
 
   <footer>
-    <p>&copy; 2025 POWERBODY. Todos os direitos reservados.</p>
+    <p>&copy; 2025 Fitness Pro. Todos os direitos reservados.</p>
   </footer>
+
+  <script>
+    // 🔑 Conexão com Supabase
+    const SUPABASE_URL = "https://jwmbpltpmpkqczxdoave.supabase.co";
+    const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imp3bWJwbHRwbXBrcWN6eGRvYXZlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTg1OTEwNDcsImV4cCI6MjA3NDE2NzA0N30.fOIG41NcI5lpop34eg-TsymepReu2PHysu_ESkU5m_Q";
+    const client = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+    // 🚫 Bloqueia acesso se não estiver logado
+    async function checkAuth() {
+      const { data: { session } } = await client.auth.getSession();
+      if (!session) {
+        window.location.href = "login.html"; // Redireciona
+      }
+    }
+    checkAuth();
+
+    // 🔓 Logout
+    document.getElementById("logoutBtn").addEventListener("click", async () => {
+      await client.auth.signOut();
+      window.location.href = "login.html";
+    });
+  </script>
 </body>
 </html>
