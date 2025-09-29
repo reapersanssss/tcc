@@ -42,26 +42,4 @@
     <p>&copy; 2025 Fitness Pro. Todos os direitos reservados.</p>
   </footer>
 
-  <script>
-    // 🔑 Conexão com Supabase
-    const SUPABASE_URL = "https://jwmbpltpmpkqczxdoave.supabase.co";
-    const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imp3bWJwbHRwbXBrcWN6eGRvYXZlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTg1OTEwNDcsImV4cCI6MjA3NDE2NzA0N30.fOIG41NcI5lpop34eg-TsymepReu2PHysu_ESkU5m_Q";
-    const client = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
-
-    // 🚫 Bloqueia acesso se não estiver logado
-    async function checkAuth() {
-      const { data: { session } } = await client.auth.getSession();
-      if (!session) {
-        window.location.href = "login.html"; // Redireciona
-      }
-    }
-    checkAuth();
-
-    // 🔓 Logout
-    document.getElementById("logoutBtn").addEventListener("click", async () => {
-      await client.auth.signOut();
-      window.location.href = "login.html";
-    });
-  </script>
-</body>
-</html>
+  
