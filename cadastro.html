@@ -1,83 +1,31 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cadastro - POWERBODY</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="https://unpkg.com/@supabase/supabase-js"></script>
+  <title>Cadastro | PowerBody</title>
+  <link rel="stylesheet" href="login.css">
+  <script type="module" src="cadastro.js" defer></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header>
-    <h1>POWERBODY - Cadastro</h1>
-  </header>
 
-  <section>
-    <form id="signupForm">
-      <label for="email">E-mail:</label>
-      <input type="email" id="email" required>
-
-      <label for="password">Senha:</label>
-      <input type="password" id="password" required>
-
-      <label for="nome">Nome:</label>
-      <input type="text" id="nome">
-
-      <label for="idade">Idade:</label>
-      <input type="number" id="idade">
-
-      <label for="genero">Gênero:</label>
-      <select id="genero">
-        <option value="">Selecione</option>
-        <option value="Masculino">Masculino</option>
-        <option value="Feminino">Feminino</option>
-        <option value="Outro">Outro</option>
-      </select>
-
-      <button type="submit">Cadastrar</button>
+  <div class="login-container">
+    <h1>Criar Conta no PowerBody</h1>
+    <form id="signup-form">
+      <input type="email" id="email" placeholder="Email" required>
+      <div class="password-wrapper">
+        <input type="password" id="password" placeholder="Senha" required>
+        <button type="button" id="toggle-password">👁️</button>
+      </div>
+      <button type="submit" id="signup-btn">Cadastrar</button>
     </form>
-    <p id="mensagem"></p>
-    <p>Já tem conta? <a href="login.html">Entrar</a></p>
-  </section>
+    <p id="message"></p>
 
-  <script>
-    const SUPABASE_URL = "https://jwmbpltpmpkqczxdoave.supabase.co";
-    const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imp3bWJwbHRwbXBrcWN6eGRvYXZlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTg1OTEwNDcsImV4cCI6MjA3NDE2NzA0N30.fOIG41NcI5lpop34eg-TsymepReu2PHysu_ESkU5m_Q";
-    const client = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+    <p class="cadastro-texto">
+      Já tem uma conta? <a href="login.html">Entrar</a>
+    </p>
+  </div>
 
-    document.getElementById("signupForm").addEventListener("submit", async function(e) {
-      e.preventDefault();
-
-      const email = document.getElementById("email").value;
-      const password = document.getElementById("password").value;
-      const nome = document.getElementById("nome").value;
-      const idade = document.getElementById("idade").value;
-      const genero = document.getElementById("genero").value;
-
-      const { data, error } = await client.auth.signUp({
-        email,
-        password
-      });
-
-      if (error) {
-        document.getElementById("mensagem").innerText = "Erro: " + error.message;
-        document.getElementById("mensagem").style.color = "red";
-      } else {
-        // salva dados extras no profiles
-        const user = data.user;
-        await client.from("profiles").insert([
-          { id: user.id, nome, idade, genero }
-        ]);
-
-        document.getElementById("mensagem").innerText = "Cadastro realizado com sucesso! Confirme seu e-mail.";
-        document.getElementById("mensagem").style.color = "green";
-
-        // redirecionar para login
-        setTimeout(() => {
-          window.location.href = "login.html";
-        }, 2000);
-      }
-    });
-  </script>
 </body>
 </html>

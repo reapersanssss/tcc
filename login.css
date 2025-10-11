@@ -1,104 +1,95 @@
-/* ===== RESET ===== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
-  background-color: #000; /* fundo preto */
-  color: #fff;            /* texto branco */
+  background: linear-gradient(135deg, #000, #003d33);
+  height: 100vh;
   display: flex;
-  justify-content: center;
   align-items: center;
-  min-height: 100vh;
-}
-
-/* ===== CONTAINER ===== */
-.container {
-  background-color: #1a1a1a; /* fundo escuro do container */
-  padding: 40px;
-  border-radius: 16px;
-  width: 100%;
-  max-width: 400px;
-  box-shadow: 0 8px 16px rgba(1, 175, 132, 0.3); /* sombra vermelha */
-}
-
-/* ===== ABAS ===== */
-.tabs {
-  display: flex;
-  justify-content: space-around;
-  margin-bottom: 20px;
-}
-
-.tabs button {
-  background: transparent;
-  border: none;
-  color: #bbb;             /* cor padrão das abas */
-  font-size: 18px;
-  cursor: pointer;
-  padding: 10px 20px;
-  border-bottom: 2px solid transparent;
-  transition: all 0.3s;
-}
-
-.tabs button.active {
-  color: #1abc9c !important;  /* vermelho escuro */
-  background: transparent !important; /* garante sem fundo */
-  border-bottom: 2px solid #b91c1c; /* underline vermelho escuro */
-}
-
-/* ===== FORMULÁRIOS ===== */
-.form {
-  display: none;
-  flex-direction: column;
-}
-
-.form.active {
-  display: flex;
-}
-
-.field {
-  margin-bottom: 20px;
-}
-
-.field input {
-  width: 100%;
-  padding: 12px;
-  border-radius: 8px;
-  border: 1px solid #333;
-  background-color: #111; /* fundo escuro dos inputs */
-  color: #fff;            /* texto branco */
-  font-size: 16px;
-}
-
-/* ===== BOTÕES ===== */
-.btn {
-  background-color: #b91c1c; /* botão vermelho escuro */
+  justify-content: center;
   color: #fff;
-  border: none;
+}
+
+.login-container {
+  background: rgba(0, 0, 0, 0.85);
+  padding: 40px;
+  border-radius: 12px;
+  width: 350px;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(0, 255, 200, 0.3);
+  animation: fadeIn 0.6s ease;
+}
+
+h1 {
+  color: #00ffbf;
+  margin-bottom: 25px;
+}
+
+input {
+  width: 100%;
   padding: 12px;
-  border-radius: 8px;
-  font-size: 16px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 6px;
+  background: #1a1a1a;
+  color: #fff;
+  font-size: 1em;
+}
+
+.password-wrapper {
+  position: relative;
+}
+
+.password-wrapper button {
+  position: absolute;
+  right: 10px;
+  top: 8px;
+  background: none;
+  border: none;
+  color: #00ffbf;
+  cursor: pointer;
+  font-size: 1.2em;
+}
+
+button#login-btn {
+  width: 100%;
+  padding: 12px;
+  margin-top: 15px;
+  background: #00ffbf;
+  border: none;
+  border-radius: 6px;
+  color: #000;
+  font-weight: bold;
   cursor: pointer;
   transition: background 0.3s;
 }
 
-.btn:hover {
-  background-color: #7f1212; /* vermelho mais escuro ao passar o mouse */
+button#login-btn:hover {
+  background: #00d6a0;
 }
 
-/* ===== MENSAGENS ===== */
-.msg {
-  margin-top: 10px;
-  font-size: 14px;
+#message {
+  margin-top: 15px;
+  color: #ff4c4c;
+  font-weight: bold;
 }
 
-.msg.error {
-  color: #b91c1c; /* vermelho escuro para erros */
+.cadastro-texto {
+  margin-top: 20px;
+  font-size: 0.9em;
 }
 
-.msg.success {
-  color: #22c55e; /* verde para sucesso */
+.cadastro-texto a {
+  color: #00ffbf;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
 }
