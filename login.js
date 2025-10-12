@@ -5,27 +5,11 @@ const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBh
 
 const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
-const form = document.getElementById("login-form");
-const message = document.getElementById("message");
-const togglePassword = document.getElementById("toggle-password");
-const passwordInput = document.getElementById("password");
-
-// Mostrar/Ocultar senha
-togglePassword.addEventListener("click", () => {
-  const type = passwordInput.type === "password" ? "text" : "password";
-  passwordInput.type = type;
-  togglePassword.textContent = type === "password" ? "👁️" : "🙈";
-});
-
-// Login com Supabase
-form.addEventListener("submit", async (e) => {
+document.getElementById("login-form").addEventListener("submit", async (e) => {
   e.preventDefault();
 
   const email = document.getElementById("email").value;
-  const password = passwordInput.value;
-
-  message.style.color = "#00ffbf";
-  message.textContent = "Verificando...";
+  const password = document.getElementById("password").value;
 
   const { data, error } = await supabase.auth.signInWithPassword({
     email,
@@ -33,15 +17,19 @@ form.addEventListener("submit", async (e) => {
   });
 
   if (error) {
-    message.style.color = "#ff4c4c";
-    message.textContent = "❌ Email ou senha incorretos!";
-    console.error(error);
-  } else {
-    message.style.color = "#00ffbf";
-    message.textContent = `✅ Olá, ${data.user.email}! Redirecionando...`;
-
-    setTimeout(() => {
-      window.location.href = "index.html"; // redireciona para a home
-    }, 1500);
+    alert("❌ Erro ao entrar: " + error.message);
+    return;
   }
+
+  const user = data.user;
+
+  // busca dados do perfil na tabela
+  const { data: perfil } = await supabase
+    .from("profiles")
+    .select("*")
+    .eq("id", user.id)
+    .single();
+
+  alert(`👋 Olá, ${perfil.username}! Bem-vindo(a) de volta.`);
+  window.location.href = "index.html";
 });
