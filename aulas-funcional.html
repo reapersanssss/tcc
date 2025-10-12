@@ -1,19 +1,19 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Aulas de Funcional</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Aulas de Funcional | PowerBody</title>
+  <link rel="stylesheet" href="aulas.css">
 </head>
 <body>
   <header>
+    <h1>POWERBODY</h1>
     <nav>
-      <h1>POWERBODY</h1>
       <ul>
-        <li><a href="index.html" class="ativo">Home</a></li>
-        <li><a href="aulas.html">Aulas</a></li>
-        <li><a href="imc.html">Calculadora IMC</a></li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="aulas.html" class="ativo">Aulas</a></li>
+        <li><a href="calculadora.html">Calculadora IMC</a></li>
         <li><a href="nutricao.html">Nutrição</a></li>
         <li><a href="planos.html">Planos</a></li>
         <li><a href="contato.html">Contato</a></li>
@@ -22,26 +22,66 @@
     </nav>
   </header>
 
-  <section>
-    <h2>Aulas de Funcional</h2>
-    <p>O treinamento funcional trabalha movimentos do dia a dia, melhorando força, equilíbrio e coordenação.</p>
+  <main class="conteudo">
+    <h2 class="titulo">🏋️ Aulas de Funcional</h2>
+    <p class="descricao">O treinamento funcional melhora a força, equilíbrio e coordenação. Confira abaixo alguns exercícios com instruções e dicas práticas:</p>
 
-    <div class="card-exercicio">
-      <h3><a href="funcional-prancha.html">Prancha (Plank)</a></h3>
-      <p>Dica: Mantenha o abdômen contraído e evite deixar o quadril cair.</p>
+    <section class="cards-container">
+      <div class="card">
+        <h3>Prancha (Plank)</h3>
+        <p>Dica: Mantenha o abdômen contraído e evite deixar o quadril cair.</p>
+        <a href="plank.html" class="btn">Ver Exercício</a>
+      </div>
+
+      <div class="card">
+        <h3>Afundo (Lunge)</h3>
+        <p>Dica: Mantenha o tronco ereto e o joelho alinhado com o tornozelo.</p>
+        <a href="lunge.html" class="btn">Ver Exercício</a>
+      </div>
+
+      <div class="card">
+        <h3>Salto no Banco (Box Jump)</h3>
+        <p>Dica: Use toda a força das pernas e absorva o impacto ao descer.</p>
+        <a href="boxjump.html" class="btn">Ver Exercício</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <div class="coluna">
+        <h4>Navegue</h4>
+        <a href="index.html">🏠 Home</a>
+        <a href="aulas.html">💪 Aulas</a>
+        <a href="planos.html">💰 Planos</a>
+        <a href="nutricao.html">🥗 Nutrição</a>
+      </div>
+
+      <div class="coluna">
+        <h4>Recursos</h4>
+        <a href="calculadora.html">⚖️ Calculadora IMC</a>
+        <a href="contato.html">📧 Contato</a>
+        <a href="suporte.html">💬 Suporte</a>
+      </div>
+
+      <div class="coluna">
+        <h4>Para Usuários</h4>
+        <a href="login.html">🔐 Login</a>
+        <a href="cadastro.html">🧾 Cadastro</a>
+        <a href="personal.html">🏋️ Personal Trainers</a>
+      </div>
+
+      <div class="coluna">
+        <h4>Redes Sociais</h4>
+        <a href="#">📸 Instagram</a>
+        <a href="#">🎥 YouTube</a>
+        <a href="#">💬 WhatsApp</a>
+      </div>
     </div>
 
-    <div class="card-exercicio">
-      <h3><a href="funcional-afundo.html">Afundo (Lunge)</a></h3>
-      <p>Dica: Mantenha o tronco ereto e o joelho alinhado com o tornozelo.</p>
+    <div class="copyright">
+      <p>© 2025 PowerBody — Todos os direitos reservados.</p>
     </div>
-
-    <div class="card-exercicio">
-      <h3><a href="funcional-salto.html">Salto no Banco (Box Jump)</a></h3>
-      <p>Dica: Use toda a força das pernas e absorva o impacto ao descer.</p>
-    </div>
-  </section>
-
-  <footer><p>&copy; 2025 POWERBODY.</p></footer>
+  </footer>
 </body>
 </html>

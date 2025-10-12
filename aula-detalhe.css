@@ -1,0 +1,359 @@
+/* === ESTILO UNIVERSAL PARA PÁGINAS DE DETALHES DAS AULAS === */
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #0b0b0b url('img/fundo-gym.jpg') center/cover fixed no-repeat;
+  color: #f1f1f1;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+/* === CABEÇALHO === */
+header {
+  background: rgba(0, 0, 0, 0.85);
+  border-bottom: 2px solid #00c48c;
+  padding: 25px 20px;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(0, 196, 140, 0.3);
+}
+
+header h1 {
+  font-size: 2.2em;
+  color: #00c48c;
+  margin: 0;
+}
+
+header p {
+  font-size: 1em;
+  color: #ccc;
+}
+
+/* === CONTEÚDO PRINCIPAL === */
+main {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 0 20px;
+  animation: fadeIn 0.8s ease;
+}
+
+/* === SEÇÕES DE CONTEÚDO === */
+section {
+  background: rgba(20, 20, 20, 0.9);
+  border-left: 4px solid #00c48c;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 25px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.6);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+section:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 196, 140, 0.25);
+}
+
+/* === TÍTULOS === */
+h2 {
+  color: #00c48c;
+  margin-bottom: 10px;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+ul li {
+  margin-bottom: 6px;
+  color: #ddd;
+}
+
+ul li::before {
+  content: "✔ ";
+  color: #00c48c;
+  font-weight: bold;
+}
+
+/* === VÍDEO DEMONSTRATIVO === */
+.video-container {
+  text-align: center;
+}
+
+iframe {
+  width: 100%;
+  max-width: 600px;
+  height: 340px;
+  border: 2px solid #00c48c;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 196, 140, 0.3);
+  transition: transform 0.3s ease;
+}
+
+iframe:hover {
+  transform: scale(1.02);
+}
+
+/* === BOTÃO VOLTAR === */
+.voltar {
+  display: inline-block;
+  margin-top: 20px;
+  background: #00c48c;
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  transition: background 0.3s ease, transform 0.2s ease;
+  font-weight: 600;
+}
+
+.voltar:hover {
+  background: #00a678;
+  transform: scale(1.05);
+}
+
+/* === RODAPÉ === */
+footer {
+  background: rgba(0, 0, 0, 0.85);
+  color: #aaa;
+  text-align: center;
+  padding: 15px;
+  border-top: 2px solid #00c48c;
+  font-size: 0.9em;
+}
+
+/* === ANIMAÇÃO === */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* === RESPONSIVIDADE === */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 1.8em;
+  }
+
+  iframe {
+    height: 250px;
+  }
+
+  .voltar {
+    padding: 8px 16px;
+  }
+}
+/* === RESET E BASE === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #0b0b0b url('../img/fundo-gym.jpg') center/cover fixed no-repeat;
+  color: #f1f1f1;
+}
+
+/* === NAVBAR === */
+.navbar {
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 50px;
+  border-bottom: 2px solid #00ffbf;
+}
+
+.navbar .logo {
+  font-size: 1.8em;
+  color: #00ffbf;
+  font-weight: 700;
+}
+
+.navbar ul {
+  display: flex;
+  list-style: none;
+  gap: 25px;
+}
+
+.navbar ul li a {
+  text-decoration: none;
+  color: #f1f1f1;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.navbar ul li a:hover,
+.navbar ul li a.active {
+  color: #00ffbf;
+}
+
+/* === CABEÇALHO === */
+header {
+  text-align: center;
+  padding: 50px 20px 30px;
+  border-bottom: 1px solid rgba(0, 255, 200, 0.3);
+}
+
+header h1 {
+  color: #00ffbf;
+  font-size: 2.5em;
+}
+
+header p {
+  color: #ccc;
+  margin-top: 10px;
+}
+
+/* === CONTEÚDO PRINCIPAL === */
+main {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 0 20px;
+  animation: fadeIn 0.8s ease;
+}
+
+section {
+  background: rgba(20, 20, 20, 0.9);
+  border-left: 4px solid #00ffbf;
+  border-radius: 10px;
+  padding: 25px;
+  margin-bottom: 25px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.6);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+section:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 255, 200, 0.25);
+}
+
+h2 {
+  color: #00ffbf;
+  margin-bottom: 12px;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+ul li {
+  margin-bottom: 8px;
+  color: #ddd;
+}
+
+ul li::before {
+  content: "✔ ";
+  color: #00ffbf;
+  font-weight: bold;
+}
+
+/* === VÍDEO === */
+.video-container {
+  text-align: center;
+}
+
+iframe {
+  width: 100%;
+  max-width: 600px;
+  height: 340px;
+  border: 2px solid #00ffbf;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 255, 200, 0.3);
+  transition: transform 0.3s ease;
+}
+
+iframe:hover {
+  transform: scale(1.02);
+}
+
+/* === BOTÃO VOLTAR === */
+.voltar-container {
+  text-align: center;
+  margin: 30px 0;
+}
+
+.voltar {
+  display: inline-block;
+  background: #00ffbf;
+  color: #000;
+  text-decoration: none;
+  padding: 12px 25px;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.voltar:hover {
+  background: #00d6a0;
+  transform: scale(1.05);
+}
+
+/* === RODAPÉ === */
+footer {
+  background: rgba(0, 0, 0, 0.9);
+  padding: 30px 50px;
+  color: #aaa;
+  border-top: 2px solid #00ffbf;
+}
+
+.footer-top {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+footer h4 {
+  color: #00ffbf;
+  margin-bottom: 10px;
+}
+
+footer a {
+  display: block;
+  color: #ddd;
+  text-decoration: none;
+  margin-bottom: 5px;
+  font-size: 0.95em;
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  color: #00ffbf;
+}
+
+footer .copy {
+  text-align: center;
+  border-top: 1px solid rgba(0, 255, 200, 0.2);
+  padding-top: 10px;
+  font-size: 0.9em;
+}
+
+/* === ANIMAÇÃO === */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* === RESPONSIVO === */
+@media (max-width: 768px) {
+  .navbar ul {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  header h1 {
+    font-size: 2em;
+  }
+
+  iframe {
+    height: 250px;
+  }
+
+  .footer-top {
+    flex-direction: column;
+    gap: 20px;
+  }
+}

@@ -1,40 +1,129 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Fitness Pro - Aulas</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aulas | PowerBody</title>
+  <link rel="stylesheet" href="aulas.css">
 </head>
 <body>
   <header>
+    <h1 class="logo">POWERBODY</h1>
     <nav>
-      <h1>POWERBODY</h1>
-      <ul>
-        <li><a href="index.html" class="ativo">Home</a></li>
-        <li><a href="aulas.html">Aulas</a></li>
-        <li><a href="imc.html">Calculadora IMC</a></li>
-        <li><a href="nutricao.html">Nutrição</a></li>
-        <li><a href="planos.html">Planos</a></li>
-        <li><a href="contato.html">Contato</a></li>
-        <li><a href="login.html">Login</a></li>
-      </ul>
+      <a href="index.html">Home</a>
+      <a href="aulas.html" class="active">Aulas</a>
+      <a href="calculadora.html">Calculadora IMC</a>
+      <a href="nutricao.html">Nutrição</a>
+      <a href="planos.html">Planos</a>
+      <a href="contato.html">Contato</a>
+      <a href="login.html">Login</a>
     </nav>
   </header>
 
-  <section>
-    <h2>Nossas Aulas</h2>
-    <ul style="list-style:none; padding:0; margin:0;">
-      <li><a href="aulas-musculacao.html" class="card-aula">Musculação</a></li>
-      <li><a href="aulas-yoga.html" class="card-aula">Yoga</a></li>
-      <li><a href="aulas-pilates.html" class="card-aula">Pilates</a></li>
-      <li><a href="aulas-hiit.html" class="card-aula">HIIT</a></li>
-      <li><a href="aulas-funcional.html" class="card-aula">Funcional</a></li>
-    </ul>
-  </section>
+  <main>
+    <section class="aulas-section fade-in">
+      <h2>Nossas Aulas</h2>
+      <p>Escolha uma modalidade e alcance seus objetivos com treinos personalizados!</p>
 
-  <footer>
-    <p>&copy; 2025 POWERBODY. Todos os direitos reservados.</p>
-  </footer>
+      <div class="aulas-grid">
+        <div class="aula-card">
+          <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=600&q=60" alt="Musculação">
+          <h3>Musculação</h3>
+          <p>Ganhe força, resistência e defina seu corpo com treinos adaptados ao seu nível.</p>
+          <a href="aulas-musculacao.html" class="btn">Ver Mais</a>
+        </div>
+
+        <div class="aula-card">
+          <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=600&q=60" alt="Yoga">
+          <h3>Yoga</h3>
+          <p>Equilíbrio entre corpo e mente. Melhore sua respiração e flexibilidade.</p>
+          <a href="aulas-yoga.html" class="btn">Ver Mais</a>
+        </div>
+
+        <div class="aula-card">
+          <img src="https://images.unsplash.com/photo-1556817411-31ae72fa3ea0?auto=format&fit=crop&w=600&q=60" alt="Pilates">
+          <h3>Pilates</h3>
+          <p>Fortaleça seu core, melhore a postura e ganhe mobilidade.</p>
+          <a href="aulas-pilates.html" class="btn">Ver Mais</a>
+        </div>
+
+        <div class="aula-card">
+          <img src="https://images.unsplash.com/photo-1594737625785-cbdb14619b1d?auto=format&fit=crop&w=600&q=60" alt="HIIT">
+          <h3>HIIT</h3>
+          <p>Treinos curtos e intensos que queimam gordura e melhoram o condicionamento.</p>
+          <a href="aulas-hiit.html" class="btn">Ver Mais</a>
+        </div>
+
+        <div class="aula-card">
+          <img src="https://images.unsplash.com/photo-1605296867304-46d5465a13f1?auto=format&fit=crop&w=600&q=60" alt="Funcional">
+          <h3>Funcional</h3>
+          <p>Movimentos dinâmicos que melhoram força, equilíbrio e agilidade.</p>
+          <a href="aulas-funcional.html" class="btn">Ver Mais</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+  <div class="footer-top">
+    <div class="footer-section">
+      <h4>Navegue</h4>
+      <ul>
+        <li><a href="index.html">🏠 Home</a></li>
+        <li><a href="aulas.html">💪 Aulas</a></li>
+        <li><a href="planos.html">💰 Planos</a></li>
+        <li><a href="nutricao.html">🥗 Nutrição</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-section">
+      <h4>Recursos</h4>
+      <ul>
+        <li><a href="imc.html">⚖ Calculadora IMC</a></li>
+        <li><a href="contato.html">📩 Contato</a></li>
+        <li><a href="#">💬 Suporte</a></li>
+        <li><a href="#">📰 Blog Fitness</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-section">
+      <h4>Para Usuários</h4>
+      <ul>
+        <li><a href="login.html">🔐 Login</a></li>
+        <li><a href="cadastro.html">🧍‍♂️ Cadastro</a></li>
+        <li><a href="#">👨‍🏫 Personal Trainers</a></li>
+        <li><a href="#">🥦 Nutricionistas</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-section">
+      <h4>Redes Sociais</h4>
+      <div class="social-icons">
+        <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png" alt="Instagram"></a>
+        <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook"></a>
+        <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube"></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="footer-lang">
+      🌎 Português (Brasil)
+    </div>
+    <div class="footer-links">
+      <a href="#">Política de Privacidade</a>
+      <a href="#">Termos de Uso</a>
+      <a href="#">Cookies</a>
+      <a href="#">Acessibilidade</a>
+      <a href="#">Suporte Técnico</a>
+    </div>
+    <p>© 2025 Fitness Pro — Todos os direitos reservados.</p>
+  </div>
+</footer>
+
+</body>
+</html>
+
+  <script src="animacoes.js"></script>
 </body>
 </html>

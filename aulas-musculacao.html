@@ -1,61 +1,72 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>POWERBODY - Musculação</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aulas de Musculação | POWERBODY</title>
+  <link rel="stylesheet" href="aulas.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <h1>POWERBODY</h1>
-            <ul>
-        <li><a href="index.html" class="ativo">Home</a></li>
-        <li><a href="aulas.html">Aulas</a></li>
-        <li><a href="imc.html">Calculadora IMC</a></li>
-        <li><a href="nutricao.html">Nutrição</a></li>
-        <li><a href="planos.html">Planos</a></li>
-        <li><a href="contato.html">Contato</a></li>
-        <li><a href="login.html">Login</a></li>
-            </ul>
-        </nav>
-    </header>
+  <!-- ===== CABEÇALHO ===== -->
+  <header>
+    <h1 class="logo">POWERBODY</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="aulas.html" class="ativo">Aulas</a>
+      <a href="calculadora.html">Calculadora IMC</a>
+      <a href="nutricao.html">Nutrição</a>
+      <a href="planos.html">Planos</a>
+      <a href="contato.html">Contato</a>
+      <a href="login.html">Login</a>
+    </nav>
+  </header>
 
-    <section>
-        <h2>Aulas de Musculação</h2>
-        <p>Aprenda exercícios, séries e dicas para fortalecer seu corpo de forma segura e eficiente.</p>
+  <!-- ===== CONTEÚDO PRINCIPAL ===== -->
+  <main>
+    <section class="aulas-header">
+      <h2>Aulas de Musculação</h2>
+      <p>Aprenda exercícios, séries e dicas para fortalecer seu corpo de forma segura e eficiente.</p>
+    </section>
 
-        <!-- Card de exercícios -->
-        <div class="card-exercicio">
-    <h3><a href="exercicio-supino.html">Supino Reto</a></h3>
-    <p>Séries: 3 | Repetições: 10-12</p>
-    <p>Dica: Mantenha os pés apoiados no chão e os ombros estabilizados.</p>
-</div>
+    <section class="musculacao-container">
+      <!-- SUPINO RETO -->
+      <div class="card">
+        <h3>🏋️ Supino Reto</h3>
+        <p><strong>Séries:</strong> 3 | <strong>Repetições:</strong> 10–12</p>
+        <p><strong>Dica:</strong> Mantenha os pés firmes no chão e estabilize os ombros.</p>
+        <a href="exercicio-supino.html" class="btn">Ver Aula</a>
+      </div>
 
-     <div class="card-exercicio">
-    <h3><a href="exercicio-agachamento.html">Agachamento Livre</a></h3>
-    <p>Séries: 3 | Repetições: 12-15</p>
-    <p>Dica: Mantenha a coluna reta e o abdômen contraído durante o movimento.</p>
-  </div>
+      <!-- AGACHAMENTO LIVRE -->
+      <div class="card">
+        <h3>🏋️ Agachamento Livre</h3>
+        <p><strong>Séries:</strong> 3 | <strong>Repetições:</strong> 12–15</p>
+        <p><strong>Dica:</strong> Mantenha a coluna reta e o abdômen contraído durante o movimento.</p>
+        <a href="exercicio-agachamento.html" class="btn">Ver Aula</a>
+      </div>
 
-  <div class="card-exercicio">
-    <h3><a href="exercicio-rosca.html">Rosca Direta</a></h3>
-    <p>Séries: 3 | Repetições: 10-12</p>
-    <p>Dica: Evite balançar o corpo, concentre-se no movimento dos braços.</p>
-  </div>
+      <!-- ROSCA DIRETA -->
+      <div class="card">
+        <h3>💪 Rosca Direta</h3>
+        <p><strong>Séries:</strong> 3 | <strong>Repetições:</strong> 10–12</p>
+        <p><strong>Dica:</strong> Evite balançar o corpo e concentre-se no movimento dos braços.</p>
+        <a href="exercicio-rosca.html" class="btn">Ver Aula</a>
+      </div>
 
-  <div class="card-exercicio">
-    <h3><a href="exercicio-remada.html">Remada Curvada</a></h3>
-    <p>Séries: 3 | Repetições: 10-12</p>
-    <p>Dica: Mantenha a coluna neutra e puxe a barra em direção ao abdômen.</p>
-  </div>
-</section>
+      <!-- REMADA CURVADA -->
+      <div class="card">
+        <h3>🏋️ Remada Curvada</h3>
+        <p><strong>Séries:</strong> 3 | <strong>Repetições:</strong> 10–12</p>
+        <p><strong>Dica:</strong> Puxe a barra em direção ao abdômen mantendo a coluna neutra.</p>
+        <a href="exercicio-remada.html" class="btn">Ver Aula</a>
+      </div>
+    </section>
+  </main>
 
-    <footer>
-        <p>&copy; 2025 POWERBODY. Todos os direitos reservados.</p>
-    </footer>
+  <!-- ===== RODAPÉ ===== -->
+  <footer>
+    <p>© 2025 POWERBODY — Todos os direitos reservados.</p>
+    <p><a href="#">Política de Privacidade</a> | <a href="#">Termos de Uso</a></p>
+  </footer>
 </body>
 </html>
-
-

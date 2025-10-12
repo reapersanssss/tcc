@@ -1,47 +1,68 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Aulas de Pilates</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Aulas de Pilates | POWERBODY</title>
+  <link rel="stylesheet" href="aulas.css">
 </head>
 <body>
+  <!-- ===== CABEÇALHO ===== -->
   <header>
+    <h1 class="logo">POWERBODY</h1>
     <nav>
-      <h1>POWERBODYo</h1>
-      <ul>
-        <li><a href="index.html" class="ativo">Home</a></li>
-        <li><a href="aulas.html">Aulas</a></li>
-        <li><a href="imc.html">Calculadora IMC</a></li>
-        <li><a href="nutricao.html">Nutrição</a></li>
-        <li><a href="planos.html">Planos</a></li>
-        <li><a href="contato.html">Contato</a></li>
-        <li><a href="login.html">Login</a></li>
-      </ul>
+      <a href="index.html">Home</a>
+      <a href="aulas.html" class="ativo">Aulas</a>
+      <a href="calculadora.html">Calculadora IMC</a>
+      <a href="nutricao.html">Nutrição</a>
+      <a href="planos.html">Planos</a>
+      <a href="contato.html">Contato</a>
+      <a href="login.html">Login</a>
     </nav>
   </header>
 
-  <section>
-    <h2>Aulas de Pilates</h2>
-    <p>O Pilates ajuda a melhorar a postura, fortalecer o core e aumentar a flexibilidade. Confira alguns exercícios básicos:</p>
+  <!-- ===== CONTEÚDO ===== -->
+  <main>
+    <section class="aulas-header">
+      <h2>Aulas de Pilates</h2>
+      <p>O Pilates ajuda a melhorar a postura, fortalecer o core e aumentar a flexibilidade. Confira abaixo alguns exercícios e dicas:</p>
+    </section>
 
-    <div class="card-exercicio">
-      <h3><a href="pilates-100.html">O Cem (The Hundred)</a></h3>
-      <p>Dica: Mantenha o abdômen contraído e respire de forma ritmada.</p>
-    </div>
+    <section class="musculacao-container">
+      <!-- CARD 1 -->
+      <div class="card">
+        <h3>💨 O Cem (The Hundred)</h3>
+        <p><strong>Dica:</strong> Mantenha o abdômen contraído e respire de forma ritmada.</p>
+        <a href="pilates-100.html" class="btn">Ver Aula</a>
+      </div>
 
-    <div class="card-exercicio">
-      <h3><a href="pilates-rollup.html">Roll-Up</a></h3>
-      <p>Dica: Suba e desça a coluna vértebra por vértebra, sem usar impulso.</p>
-    </div>
+      <!-- CARD 2 -->
+      <div class="card">
+        <h3>↕️ Roll-Up</h3>
+        <p><strong>Dica:</strong> Suba e desça a coluna vértebra por vértebra, sem impulso.</p>
+        <a href="pilates-rollup.html" class="btn">Ver Aula</a>
+      </div>
 
-    <div class="card-exercicio">
-      <h3><a href="pilates-legcircle.html">Leg Circle</a></h3>
-      <p>Dica: Mantenha o abdômen firme e o quadril estável durante o movimento.</p>
-    </div>
-  </section>
+      <!-- CARD 3 -->
+      <div class="card">
+        <h3>🔄 Leg Circle</h3>
+        <p><strong>Dica:</strong> Mantenha o abdômen firme e o quadril estável durante o movimento.</p>
+        <a href="pilates-legcircle.html" class="btn">Ver Aula</a>
+      </div>
 
-  <footer><p>&copy; 2025 POWERBODY.</p></footer>
+      <!-- CARD 4 -->
+      <div class="card">
+        <h3>🧘‍♀️ Spine Stretch</h3>
+        <p><strong>Dica:</strong> Alongue a coluna para frente, mantendo o abdômen contraído.</p>
+        <a href="pilates-spine.html" class="btn">Ver Aula</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== RODAPÉ ===== -->
+  <footer>
+    <p>© 2025 POWERBODY — Todos os direitos reservados.</p>
+    <p><a href="#">Política de Privacidade</a> | <a href="#">Termos de Uso</a></p>
+  </footer>
 </body>
 </html>

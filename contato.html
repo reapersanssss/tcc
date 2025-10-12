@@ -1,42 +1,89 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>POWERBODY - Contato</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contato | PowerBody</title>
+  <link rel="stylesheet" href="contato.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <h1>POWERBODY</h1>
-            <ul>
-        <li><a href="index.html" class="ativo">Home</a></li>
-        <li><a href="aulas.html">Aulas</a></li>
-        <li><a href="imc.html">Calculadora IMC</a></li>
-        <li><a href="nutricao.html">Nutrição</a></li>
-        <li><a href="planos.html">Planos</a></li>
-        <li><a href="contato.html">Contato</a></li>
-        <li><a href="login.html">Login</a></li>
-            </ul>
-        </nav>
-    </header>
+  <header>
+    <h1 class="logo">POWERBODY</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="aulas.html">Aulas</a>
+      <a href="calculadora.html">Calculadora IMC</a>
+      <a href="nutricao.html">Nutrição</a>
+      <a href="planos.html">Planos</a>
+      <a href="contato.html" class="active">Contato</a>
+      <a href="login.html">Login</a>
+    </nav>
+  </header>
 
-    <section>
-        <h2>Contato</h2>
-        <form id="contatoForm">
-            <label>Nome: <input type="text" required></label>
-            <label>Email: <input type="email" required></label>
-            <label>Mensagem: <textarea required></textarea></label>
-            <button type="submit">Enviar</button>
-        </form>
-        <p id="msgContato"></p>
+  <main>
+    <section class="contato-container fade-in">
+      <h2>Entre em Contato Conosco</h2>
+      <p>Preencha o formulário abaixo e nossa equipe retornará o mais rápido possível.</p>
+
+      <form id="form-contato">
+        <div class="input-group">
+          <label for="nome">Nome</label>
+          <input type="text" id="nome" placeholder="Digite seu nome" required>
+        </div>
+
+        <div class="input-group">
+          <label for="email">E-mail</label>
+          <input type="email" id="email" placeholder="exemplo@email.com" required>
+        </div>
+
+        <div class="input-group">
+          <label for="mensagem">Mensagem</label>
+          <textarea id="mensagem" placeholder="Digite sua mensagem..." required></textarea>
+        </div>
+
+        <button type="submit" class="btn-enviar">Enviar Mensagem</button>
+      </form>
+
+      <div id="mensagem-sucesso" class="oculto">
+        <p>✅ Obrigado por entrar em contato! Retornaremos em breve.</p>
+      </div>
     </section>
+  </main>
 
-    <footer>
-        <p>&copy; 2025 POWERBODY. Todos os direitos reservados.</p>
-    </footer>
+  <footer>
+    <div class="footer-content">
+      <div>
+        <h4>Navegue</h4>
+        <ul>
+          <li><a href="index.html">🏠 Home</a></li>
+          <li><a href="aulas.html">💪 Aulas</a></li>
+          <li><a href="planos.html">💸 Planos</a></li>
+          <li><a href="nutricao.html">🥗 Nutrição</a></li>
+        </ul>
+      </div>
 
-    <script src="script.js"></script>
+      <div>
+        <h4>Recursos</h4>
+        <ul>
+          <li><a href="calculadora.html">📏 Calculadora IMC</a></li>
+          <li><a href="suporte.html">💬 Suporte</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Redes Sociais</h4>
+        <div class="redes">
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#"><i class="fa-brands fa-facebook"></i></a>
+          <a href="#"><i class="fa-brands fa-twitter"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <p class="copy">© 2025 POWERBODY — Todos os direitos reservados | Política de Privacidade | Termos de Uso</p>
+  </footer>
+
+  <script src="contato.js"></script>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </body>
 </html>

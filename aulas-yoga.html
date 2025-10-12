@@ -1,52 +1,68 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Aulas de Yoga</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Aulas de Yoga | POWERBODY</title>
+  <link rel="stylesheet" href="aulas.css">
 </head>
 <body>
+  <!-- ===== CABEÇALHO ===== -->
   <header>
+    <h1 class="logo">POWERBODY</h1>
     <nav>
-      <h1>POWERBODY</h1>
-      <ul>
-         <li><a href="index.html" class="ativo">Home</a></li>
-        <li><a href="aulas.html">Aulas</a></li>
-        <li><a href="imc.html">Calculadora IMC</a></li>
-        <li><a href="nutricao.html">Nutrição</a></li>
-        <li><a href="planos.html">Planos</a></li>
-        <li><a href="contato.html">Contato</a></li>
-        <li><a href="login.html">Login</a></li>
-      </ul>
+      <a href="index.html">Home</a>
+      <a href="aulas.html" class="ativo">Aulas</a>
+      <a href="calculadora.html">Calculadora IMC</a>
+      <a href="nutricao.html">Nutrição</a>
+      <a href="planos.html">Planos</a>
+      <a href="contato.html">Contato</a>
+      <a href="login.html">Login</a>
     </nav>
   </header>
 
-  <section>
-    <h2>Aulas de Yoga</h2>
-    <p>O Yoga é uma prática milenar que ajuda a melhorar a flexibilidade, concentração e relaxamento. Confira alguns exercícios básicos:</p>
+  <!-- ===== CONTEÚDO PRINCIPAL ===== -->
+  <main>
+    <section class="aulas-header">
+      <h2>Aulas de Yoga</h2>
+      <p>O Yoga é uma prática milenar que melhora a flexibilidade, força, respiração e equilíbrio mental. Escolha sua postura e comece agora.</p>
+    </section>
 
-    <div class="card-exercicio">
-      <h3><a href="yoga-montanha.html">Postura da Montanha (Tadasana)</a></h3>
-      <p>Dica: Mantenha os pés juntos, braços ao lado do corpo e respire profundamente.</p>
-    </div>
+    <section class="musculacao-container">
+      <!-- MONTANHA -->
+      <div class="card">
+        <h3>🧘‍♀️ Postura da Montanha (Tadasana)</h3>
+        <p><strong>Dica:</strong> Mantenha os pés juntos, braços ao lado do corpo e respire profundamente.</p>
+        <a href="yoga-montanha.html" class="btn">Ver Aula</a>
+      </div>
 
-    <div class="card-exercicio">
-      <h3><a href="yoga-arvore.html">Postura da Árvore (Vrikshasana)</a></h3>
-      <p>Dica: Apoie um pé na coxa da outra perna e mantenha as mãos unidas acima da cabeça.</p>
-    </div>
+      <!-- ÁRVORE -->
+      <div class="card">
+        <h3>🌳 Postura da Árvore (Vrikshasana)</h3>
+        <p><strong>Dica:</strong> Apoie um pé na coxa oposta e mantenha as mãos unidas acima da cabeça.</p>
+        <a href="yoga-arvore.html" class="btn">Ver Aula</a>
+      </div>
 
-    <div class="card-exercicio">
-      <h3><a href="yoga-cao.html">Postura do Cão Olhando para Baixo (Adho Mukha Svanasana)</a></h3>
-      <p>Dica: Forme um “V” invertido com o corpo, mantendo a coluna alongada e os calcanhares em direção ao chão.</p>
-    </div>
+      <!-- CÃO -->
+      <div class="card">
+        <h3>🐕 Postura do Cão Olhando para Baixo (Adho Mukha Svanasana)</h3>
+        <p><strong>Dica:</strong> Forme um “V” invertido com o corpo e mantenha os calcanhares voltados ao chão.</p>
+        <a href="yoga-cao.html" class="btn">Ver Aula</a>
+      </div>
 
-    <div class="card-exercicio">
-      <h3><a href="yoga-crianca.html">Postura da Criança (Balasana)</a></h3>
-      <p>Dica: Sente-se sobre os calcanhares, leve o tronco para frente e descanse a testa no chão.</p>
-    </div>
-  </section>
+      <!-- CRIANÇA -->
+      <div class="card">
+        <h3>🧎‍♀️ Postura da Criança (Balasana)</h3>
+        <p><strong>Dica:</strong> Sente-se sobre os calcanhares e leve o tronco à frente, descansando a testa no chão.</p>
+        <a href="yoga-crianca.html" class="btn">Ver Aula</a>
+      </div>
+    </section>
+  </main>
 
-  <footer><p>&copy; 2025 POWERBODY.</p></footer>
+  <!-- ===== RODAPÉ ===== -->
+  <footer>
+    <p>© 2025 POWERBODY — Todos os direitos reservados.</p>
+    <p><a href="#">Política de Privacidade</a> | <a href="#">Termos de Uso</a></p>
+  </footer>
 </body>
 </html>
