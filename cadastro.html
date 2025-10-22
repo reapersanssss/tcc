@@ -1,42 +1,63 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cadastro | PowerBody</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Cadastro — PowerBody</title>
   <link rel="stylesheet" href="style.css">
   <script type="module" src="cadastro.js" defer></script>
+  <script type="module" src="auth-header.js" defer></script>
 </head>
 <body>
-  <nav class="navbar">
+  <header class="navbar">
     <div class="logo">POWERBODY</div>
-    <ul class="nav-links">
+    <ul class="nav-links" id="navLinks">
       <li><a href="index.html">Home</a></li>
-      <li><a href="login.html">Login</a></li>
+      <li><a href="login.html" id="loginLink">Entrar</a></li>
     </ul>
-  </nav>
+  </header>
 
-  <div class="form-container">
-    <h2>Crie sua Conta</h2>
-    <form id="cadastroForm">
-      <label for="nome">Nome completo:</label>
-      <input type="text" id="nome" placeholder="Digite seu nome completo" required>
+  <main>
+    <div class="form-container">
+      <h2>Crie sua Conta</h2>
+      <form id="cadastroForm">
+        <label for="nome">Nome completo</label>
+        <input id="nome" type="text" required>
 
-      <label for="email">E-mail:</label>
-      <input type="email" id="email" placeholder="Digite seu e-mail" required>
+        <label for="email">E-mail</label>
+        <input id="email" type="email" required>
 
-      <label for="senha">Senha:</label>
-      <input type="password" id="senha" placeholder="Crie uma senha" required>
+        <label for="senha">Senha</label>
+        <input id="senha" type="password" minlength="6" required>
 
-      <label for="confirmarSenha">Confirmar senha:</label>
-      <input type="password" id="confirmarSenha" placeholder="Repita a senha" required>
-      </select>
+        <label for="confirmarSenha">Confirmar senha</label>
+        <input id="confirmarSenha" type="password" minlength="6" required>
 
-      <button type="submit">Cadastrar</button>
-      <p style="text-align:center; margin-top:10px;">
-        Já tem uma conta? <a href="login.html" style="color:#1abc9c;">Entrar</a>
-      </p>
-    </form>
-  </div>
+        <label for="idade">Idade</label>
+        <input id="idade" type="number" min="10" max="120">
+
+        <label for="sexo">Gênero</label>
+        <select id="sexo">
+          <option value="">Selecione</option>
+          <option value="masculino">Masculino</option>
+          <option value="feminino">Feminino</option>
+          <option value="outro">Outro</option>
+        </select>
+
+        <label for="objetivo">Objetivo</label>
+        <select id="objetivo">
+          <option value="">Selecione</option>
+          <option value="perda-de-peso">Perda de peso</option>
+          <option value="ganho-de-massa">Ganho de massa</option>
+          <option value="condicionamento">Condicionamento físico</option>
+        </select>
+
+        <label for="avatar">Foto de perfil (opcional)</label>
+        <input id="avatar" type="file" accept="image/*">
+
+        <button type="submit">Cadastrar</button>
+      </form>
+    </div>
+  </main>
 </body>
 </html>
