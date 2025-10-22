@@ -1,35 +1,37 @@
-import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm';
+import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm'
 
-const SUPABASE_URL = "https://jwmbpltpmpkqczxdoave.supabase.co";
-const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imp3bWJwbHRwbXBrcWN6eGRvYXZlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTg1OTEwNDcsImV4cCI6MjA3NDE2NzA0N30.fOIG41NcI5lpop34eg-TsymepReu2PHysu_ESkU5m_Q";
+const SUPABASE_URL = 'https://jwmbpltpmpkqczxdoave.supabase.co'
+const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imp3bWJwbHRwbXBrcWN6eGRvYXZlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTg1OTEwNDcsImV4cCI6MjA3NDE2NzA0N30.fOIG41NcI5lpop34eg-TsymepReu2PHysu_ESkU5m_Q'
+const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY)
 
-const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+// 🔹 Mantém o login ativo mesmo se fechar o navegador
+supabase.auth.onAuthStateChange(async (event, session) => {
+  if (session) {
+    localStorage.setItem('supabaseSession', JSON.stringify(session))
+  } else {
+    localStorage.removeItem('supabaseSession')
+  }
+})
 
-document.getElementById("login-form").addEventListener("submit", async (e) => {
-  e.preventDefault();
+// 🔹 Se já estiver logado, redireciona direto pra home
+const session = JSON.parse(localStorage.getItem('supabaseSession'))
+if (session) {
+  window.location.href = 'index.html'
+}
 
-  const email = document.getElementById("email").value;
-  const password = document.getElementById("password").value;
+document.getElementById('loginForm').addEventListener('submit', async (e) => {
+  e.preventDefault()
 
-  const { data, error } = await supabase.auth.signInWithPassword({
-    email,
-    password
-  });
+  const email = document.getElementById('email').value
+  const senha = document.getElementById('senha').value
+
+  const { data, error } = await supabase.auth.signInWithPassword({ email, password: senha })
 
   if (error) {
-    alert("❌ Erro ao entrar: " + error.message);
-    return;
+    alert('Erro ao fazer login: ' + error.message)
+  } else {
+    localStorage.setItem('supabaseSession', JSON.stringify(data.session))
+    alert('Login realizado com sucesso!')
+    window.location.href = 'index.html'
   }
-
-  const user = data.user;
-
-  // busca dados do perfil na tabela
-  const { data: perfil } = await supabase
-    .from("profiles")
-    .select("*")
-    .eq("id", user.id)
-    .single();
-
-  alert(`👋 Olá, ${perfil.username}! Bem-vindo(a) de volta.`);
-  window.location.href = "index.html";
-});
+})

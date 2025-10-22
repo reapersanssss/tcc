@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="pt-BR">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Nutrição Premium — PowerBody</title>
+<link rel="stylesheet" href="premium.css"></head>
+<body>
+<nav class="navbar"><div class="logo">POWERBODY</div><div class="nav-links"><a href="index.html">Home</a><a href="premium.html">Premium</a></div></nav>
+
+<div class="container" id="content"></div>
+
+<footer>© 2025 PowerBody — Todos os direitos reservados.</footer>
+
+<script>
+if(localStorage.getItem('powerbody_premium') !== 'true'){
+  window.location.href = 'premium.html?need=subscribe'
+} else {
+  const c = document.getElementById('content')
+  c.innerHTML = `
+    <section class="card">
+      <h2>Planos Alimentares</h2>
+      <p>Escolha de acordo com objetivo.</p>
+      <ul class="features">
+        <li><strong>Ganho de Massa:</strong> +300 kcal, 2g proteína/kg</li>
+        <li><strong>Emagrecimento:</strong> -500 kcal, alta proteína e déficit controlado</li>
+        <li><strong>Manutenção:</strong> kcal de manutenção com ajustes de macro</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Exemplo: Plano para Ganho de Massa (3 refeições principais + 2 lanches)</h2>
+      <ul class="features">
+        <li>Café: aveia, whey, banana, oleaginosas</li>
+        <li>Almoço: arroz integral, frango grelhado, legumes</li>
+        <li>Lanche: iogurte natural + frutas</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Fale com nosso Nutricionista</h2>
+      <p>Envie uma mensagem para agendar consulta.</p>
+      <a class="btn-small" href="contato.html">Agendar Consulta</a>
+    </section>
+  `
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Treinos Premium — PowerBody</title>
+<link rel="stylesheet" href="premium.css">
+</head>
+<body>
+<nav class="navbar">
+  <div class="logo">POWERBODY</div>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="aulas.html">Aulas</a>
+    <a href="premium.html">Premium</a>
+  </div>
+</nav>
+
+<div class="container" id="content">
+  <!-- conteúdo será mostrado se acessar for permitido -->
+</div>
+
+<footer>© 2025 PowerBody — Todos os direitos reservados.</footer>
+
+<script>
+  // proteção: só acessa se for premium
+  if(localStorage.getItem('powerbody_premium') !== 'true'){
+    // redireciona para a página do plano (nota: adiciona query para mostrar aviso)
+    window.location.href = 'premium.html?need=subscribe'
+  } else {
+    const c = document.getElementById('content')
+    c.innerHTML = `
+      <section class="card">
+        <h2>Treinos Avançados — Semana 1</h2>
+        <p>Programação: 4x/semana — combinação de força, potência e hipertrofia.</p>
+      </section>
+
+      <section class="card">
+        <h2>Vídeo: Supino Avançado</h2>
+        <div class="video-wrap">
+          <iframe src="https://www.youtube.com/embed/8iPEnn-ltC8" allowfullscreen></iframe>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Vídeo: Agachamento Profundo</h2>
+        <div class="video-wrap">
+          <iframe src="https://www.youtube.com/embed/aclHkVaku9U" allowfullscreen></iframe>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Cronograma Semanal</h2>
+        <ul class="features">
+          <li>Segunda — Peito / Tríceps (força)</li>
+          <li>Terça — Costas / Bíceps (hipertrofia)</li>
+          <li>Quinta — Pernas (potência)</li>
+          <li>Sábado — Core e mobilidade</li>
+        </ul>
+      </section>
+    `
+  }
+</script>
+</body>
+</html>

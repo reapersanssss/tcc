@@ -1,0 +1,91 @@
+:root{
+  --verde:#00ffbf;
+  --verde-hover:#00d6a0;
+  --fundo:#0b0b0b;
+  --card:#151515;
+  --texto:#f1f1f1;
+  --sub:#bfbfbf;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family: "Poppins",sans-serif;
+  background:var(--fundo) url('../img/fundo-gym.jpg') center/cover fixed no-repeat;
+  color:var(--texto);
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+}
+
+/* NAV */
+.navbar{
+  background:rgba(0,0,0,0.9);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:14px 28px;
+  border-bottom:2px solid var(--verde);
+}
+.logo{color:var(--verde);font-weight:700;font-size:1.3rem}
+.nav-links{display:flex;gap:18px}
+.nav-links a{color:var(--texto);text-decoration:none}
+.nav-links a:hover{color:var(--verde)}
+
+/* container */
+.container{max-width:1100px;margin:30px auto;padding:0 18px;flex:1}
+
+/* plano card */
+.plan-card{
+  background:var(--card);border-radius:10px;padding:22px;border-left:4px solid var(--verde);
+  box-shadow:0 6px 18px rgba(0,0,0,0.6);width:320px;
+}
+.plan-card h3{color:var(--verde);margin:0 0 8px;font-size:1.4rem;text-align:center}
+.plan-card .price{color: #a7ff7f; font-size:1.6rem;font-weight:700;text-align:center;margin:8px 0}
+.btn-primary{
+  display:block;margin:14px auto 8px;background:var(--verde);color:#000;border:none;padding:10px 20px;border-radius:8px;
+  font-weight:700;cursor:pointer;transition:all .18s
+}
+.btn-primary:hover{background:var(--verde-hover);transform:scale(1.03)}
+.features{margin-top:12px;color:var(--sub);list-style:none;padding-left:0}
+.features li{margin:8px 0;padding-left:0;padding-left:6px;}
+
+/* layout da página do plano */
+.plan-wrapper{display:flex;gap:30px;align-items:flex-start;flex-wrap:wrap}
+.plan-left{flex:1}
+.plan-right{width:340px}
+
+/* seção premium content (lista com cards) */
+.card{
+  background:var(--card);border-radius:10px;padding:18px;margin-bottom:18px;border-left:4px solid var(--verde);
+  box-shadow:0 4px 12px rgba(0,0,0,0.5)
+}
+.card h2{color:var(--verde);margin:0 0 8px}
+
+/* botões pequenos */
+.btn-small{background:transparent;border:1px solid var(--verde);color:var(--verde);padding:8px 12px;border-radius:8px;cursor:pointer}
+.btn-danger{background:#2b2b2b;border:1px solid #7a2b2b;color:#ffb3b3}
+
+/* vídeo responsivo */
+.video-wrap{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:8px}
+.video-wrap iframe{position:absolute;left:0;top:0;width:100%;height:100%;border:0;border-radius:8px}
+
+/* chat */
+.chat-box{background:#0f0f0f;border-radius:8px;padding:12px;height:380px;display:flex;flex-direction:column}
+.messages{flex:1;overflow:auto;padding:8px}
+.msg{margin:8px 0;padding:8px 12px;border-radius:12px;max-width:80%}
+.msg.user{align-self:flex-end;background:var(--verde);color:#000}
+.msg.bot{align-self:flex-start;background:#232323;color:var(--texto)}
+
+.chat-input{display:flex;gap:8px;margin-top:8px}
+.chat-input input{flex:1;padding:10px;border-radius:8px;border:1px solid #222;background:#0b0b0b;color:var(--texto)}
+.chat-input button{padding:10px 14px;border-radius:8px;border:none;background:var(--verde);color:#000}
+
+/* footer */
+footer{border-top:2px solid var(--verde);padding:18px;text-align:center;color:var(--sub);background:rgba(0,0,0,0.9)}
+
+/* responsivo */
+@media (max-width:900px){
+  .plan-wrapper{flex-direction:column}
+  .plan-right{width:100%}
+}

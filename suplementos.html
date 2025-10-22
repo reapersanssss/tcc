@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="pt-BR">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Suplementos — PowerBody</title>
+<link rel="stylesheet" href="premium.css"></head>
+<body>
+<nav class="navbar"><div class="logo">POWERBODY</div><div class="nav-links"><a href="index.html">Home</a><a href="premium.html">Premium</a></div></nav>
+
+<div class="container" id="content"></div>
+
+<footer>© 2025 PowerBody — Todos os direitos reservados.</footer>
+
+<script>
+if(localStorage.getItem('powerbody_premium') !== 'true'){
+  window.location.href = 'premium.html?need=subscribe'
+} else {
+  const c = document.getElementById('content')
+  c.innerHTML = `
+    <section class="card">
+      <h2>Planos de Suplementação</h2>
+      <p>Recomendações gerais (consulte um nutricionista antes):</p>
+      <ul class="features">
+        <li><strong>Whey Protein:</strong> pós treino para recuperação (20-30g)</li>
+        <li><strong>Creatina:</strong> 3-5g/dia para força e performance</li>
+        <li><strong>BCAA/EAAs:</strong> opcional para treinos intensos</li>
+        <li><strong>Multivitamínico:</strong> preencher micronutrientes</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Como escolher</h2>
+      <ol style="color:var(--sub);margin-left:18px">
+        <li>Defina objetivo (ganho, perda, manutenção)</li>
+        <li>Consulte seu histórico e saúde</li>
+        <li>Priorize dieta antes de suplementos</li>
+      </ol>
+    </section>
+  `
+}
+</script>
+</body>
+</html>

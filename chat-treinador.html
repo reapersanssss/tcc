@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="pt-BR">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Chat com Treinador — PowerBody</title>
+<link rel="stylesheet" href="premium.css"></head>
+<body>
+<nav class="navbar"><div class="logo">POWERBODY</div><div class="nav-links"><a href="index.html">Home</a><a href="premium.html">Premium</a></div></nav>
+
+<div class="container" id="content"></div>
+
+<footer>© 2025 PowerBody — Todos os direitos reservados.</footer>
+
+<script>
+if(localStorage.getItem('powerbody_premium') !== 'true'){
+  window.location.href = 'premium.html?need=subscribe'
+} else {
+  const c = document.getElementById('content')
+  c.innerHTML = `
+    <section class="card">
+      <h2>Chat com Treinador</h2>
+      <div class="chat-box">
+        <div class="messages" id="messages">
+          <div class="msg bot">Olá! Eu sou seu assistente de treino. Como posso ajudar hoje?</div>
+        </div>
+        <div class="chat-input">
+          <input id="chatInput" placeholder="Escreva sua mensagem..." />
+          <button id="sendBtn">Enviar</button>
+        </div>
+      </div>
+    </section>
+  `
+
+  const messages = document.getElementById('messages')
+  const input = document.getElementById('chatInput')
+  const sendBtn = document.getElementById('sendBtn')
+
+  function addMsg(text, who){
+    const d = document.createElement('div'); d.className = 'msg ' + (who==='user'?'user':'bot'); d.textContent = text
+    messages.appendChild(d); messages.scrollTop = messages.scrollHeight
+  }
+
+  sendBtn.addEventListener('click', () => {
+    const txt = input.value.trim(); if(!txt) return
+    addMsg(txt,'user'); input.value=''
+    // resposta simulada (poderia ser expandida)
+    setTimeout(() => {
+      let reply = 'Obrigado! Recebi sua mensagem. Um treinador responderá em breve.'
+      if(/dor|lesão/i.test(txt)) reply = 'Se você descreveu dor, pare o exercício e consulte um profissional. Deseja agendar avaliação?'
+      addMsg(reply,'bot')
+    }, 800)
+  })
+
+  input.addEventListener('keydown', e => { if(e.key==='Enter') sendBtn.click() })
+}
+</script>
+</body>
+</html>

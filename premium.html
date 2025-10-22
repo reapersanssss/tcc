@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Plano Premium — PowerBody</title>
+<link rel="stylesheet" href="premium.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">POWERBODY</div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="aulas.html">Aulas</a>
+      <a href="contato.html">Contato</a>
+      <a href="login.html">Login</a>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="plan-wrapper">
+      <div class="plan-left">
+        <section class="card">
+          <h2>Premium</h2>
+          <p>Tenha acesso completo às aulas avançadas, suporte e planos de nutrição.</p>
+        </section>
+
+        <section class="card">
+          <h2>O que inclui</h2>
+          <ul class="features">
+            <li>✔ Treinos completos e avançados</li>
+            <li>✔ Acompanhamento nutricional personalizado</li>
+            <li>✔ Suporte via chat com treinador</li>
+            <li>✔ Planos de suplementação</li>
+          </ul>
+        </section>
+
+        <section class="card">
+          <h2>Benefícios</h2>
+          <p>Conteúdo exclusivo, cronogramas semanais, vídeos sem anúncios e suporte prioritário.</p>
+          <p style="margin-top:12px"><a class="btn-small" href="treinos-premium.html">Ir para Treinos</a>
+            <a class="btn-small" href="nutricao-premium.html" style="margin-left:8px">Nutrição</a></p>
+        </section>
+      </div>
+
+      <aside class="plan-right">
+        <div class="plan-card">
+          <h3>Premium</h3>
+          <p class="price">R$19,90/mês</p>
+          <button id="subscribeBtn" class="btn-primary">ASSINAR AGORA</button>
+          <button id="cancelBtn" class="btn-small" style="display:block;margin:8px auto 0">CANCELAR ASSINATURA</button>
+          <ul class="features">
+            <li>✔ Treinos completos e avançados</li>
+            <li>✔ Acompanhamento nutricional personalizado</li>
+            <li>✔ Suporte via chat com treinador</li>
+            <li>✔ Planos de suplementação</li>
+          </ul>
+          <p id="subMsg" style="color:var(--sub);text-align:center;margin-top:8px"></p>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <footer>
+    © 2025 PowerBody — Todos os direitos reservados.
+  </footer>
+
+<script>
+  // lógica de "assinatura" simulada
+  const subscribeBtn = document.getElementById('subscribeBtn')
+  const cancelBtn = document.getElementById('cancelBtn')
+  const subMsg = document.getElementById('subMsg')
+
+  function updateMsg(){
+    const isPremium = localStorage.getItem('powerbody_premium') === 'true'
+    subMsg.textContent = isPremium ? 'Você é Premium — acesso liberado.' : 'Ainda não assinado.'
+    cancelBtn.style.display = isPremium ? 'block' : 'none'
+  }
+  updateMsg()
+
+  subscribeBtn.addEventListener('click', () => {
+    localStorage.setItem('powerbody_premium','true')
+    updateMsg()
+    alert('✅ Assinatura simulada ativada. Agora você tem acesso às páginas Premium.')
+    // redireciona para treinos premium
+    window.location.href = 'treinos-premium.html'
+  })
+
+  cancelBtn.addEventListener('click', () => {
+    localStorage.removeItem('powerbody_premium')
+    updateMsg()
+    alert('Assinatura cancelada (simulada).')
+  })
+
+  // se veio de uma tentativa de acessar sem assinatura, mostra aviso
+  const url = new URL(location.href)
+  if(url.searchParams.get('need') === 'subscribe'){
+    alert('⚠️ Você precisa assinar o plano Premium para acessar esta página.')
+  }
+</script>
+</body>
+</html>

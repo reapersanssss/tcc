@@ -4,29 +4,32 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login | PowerBody</title>
-  <link rel="stylesheet" href="login.css">
+  <link rel="stylesheet" href="style.css">
   <script type="module" src="login.js" defer></script>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
+  <nav class="navbar">
+    <div class="logo">POWERBODY</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="cadastro.html">Cadastro</a></li>
+    </ul>
+  </nav>
 
-  <div class="login-container">
-    <h1>Entrar no PowerBody</h1>
-    <form id="login-form">
-      <input type="email" id="email" placeholder="Email" required>
-      <div class="password-wrapper">
-        <input type="password" id="password" placeholder="Senha" required>
-        <button type="button" id="toggle-password">👁️</button>
-      </div>
-      <button type="submit" id="login-btn">Entrar</button>
+  <div class="form-container">
+    <h2>Login</h2>
+    <form id="loginForm">
+      <label for="email">E-mail:</label>
+      <input type="email" id="email" placeholder="Digite seu e-mail" required>
+
+      <label for="senha">Senha:</label>
+      <input type="password" id="senha" placeholder="Digite sua senha" required>
+
+      <button type="submit">Entrar</button>
+      <p style="text-align:center; margin-top:10px;">
+        Não tem conta? <a href="cadastro.html" style="color:#1abc9c;">Cadastre-se</a>
+      </p>
     </form>
-    <p id="message"></p>
-
-    <p class="cadastro-texto">
-      Ainda não tem conta? <a href="cadastro.html">Cadastre-se</a>
-    </p>
   </div>
-
-<a href="index.html" class="btn-voltar">← Voltar</a>
 </body>
 </html>
