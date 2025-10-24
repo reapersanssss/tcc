@@ -510,20 +510,20 @@ footer a:hover {
 
 .titulo-premium {
   color: #00ffa6;
-  font-size: 2rem;
+  font-size: 2.2rem;
   margin-bottom: 40px;
-  border-bottom: 2px solid #00ffa6;
+  border-bottom: 3px solid #00ffa6;
   display: inline-block;
-  padding-bottom: 5px;
+  padding-bottom: 8px;
   letter-spacing: 1px;
+  text-shadow: 0 0 10px rgba(0, 255, 150, 0.6);
 }
 
 .container-aulas {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 30px;
-  max-width: 1200px;
+  max-width: 1100px;
   margin: 0 auto;
 }
 
@@ -532,14 +532,16 @@ footer a:hover {
   border: 1px solid #00ffa666;
   border-radius: 16px;
   box-shadow: 0 4px 20px rgba(0, 255, 150, 0.08);
-  width: 320px;
   transition: all 0.3s ease;
   overflow: hidden;
   text-align: left;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .card-aula:hover {
-  transform: translateY(-8px);
+  transform: translateY(-6px);
   box-shadow: 0 6px 25px rgba(0, 255, 150, 0.2);
 }
 
@@ -555,6 +557,9 @@ footer a:hover {
   margin: 15px 20px 10px;
   font-size: 1.2rem;
   font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .card-aula p {
@@ -562,7 +567,7 @@ footer a:hover {
   font-size: 0.95rem;
   margin: 0 20px 20px;
   line-height: 1.5;
-  min-height: 60px;
+  flex-grow: 1;
 }
 
 .card-aula .btn {
@@ -581,4 +586,19 @@ footer a:hover {
 .card-aula .btn:hover {
   background: #00cc88;
   transform: scale(1.05);
+}
+
+/* ===== RESPONSIVO ===== */
+@media (max-width: 768px) {
+  .container-aulas {
+    grid-template-columns: 1fr;
+  }
+
+  .card-aula img {
+    height: 180px;
+  }
+
+  .titulo-premium {
+    font-size: 1.8rem;
+  }
 }
