@@ -503,15 +503,16 @@ footer a:hover {
 
 /* ===== AULAS PREMIUM ===== */
 .aulas-premium {
+  background: #0b0b0b;
+  padding: 60px 40px 100px; /* espaçamento inferior aumentado */
   text-align: center;
-  padding: 60px 20px;
-  background: #0c0c0c;
+  color: #e0e0e0;
 }
 
-.titulo-premium {
+.aulas-premium h2 {
   color: #00ffa6;
   font-size: 2.2rem;
-  margin-bottom: 40px;
+  margin-bottom: 50px;
   border-bottom: 3px solid #00ffa6;
   display: inline-block;
   padding-bottom: 8px;
@@ -519,39 +520,43 @@ footer a:hover {
   text-shadow: 0 0 10px rgba(0, 255, 150, 0.6);
 }
 
+/* Container com grid horizontal */
 .container-aulas {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 30px;
-  max-width: 1100px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px; /* espaçamento entre os cards */
+  max-width: 1200px;
   margin: 0 auto;
 }
 
+/* Cada card */
 .card-aula {
   background: #141414;
   border: 1px solid #00ffa666;
-  border-radius: 16px;
+  border-radius: 12px;
   box-shadow: 0 4px 20px rgba(0, 255, 150, 0.08);
   transition: all 0.3s ease;
   overflow: hidden;
-  text-align: left;
+  width: 300px; /* tamanho fixo e proporcional */
   display: flex;
   flex-direction: column;
-  height: 100%;
+  justify-content: space-between;
 }
 
 .card-aula:hover {
   transform: translateY(-6px);
-  box-shadow: 0 6px 25px rgba(0, 255, 150, 0.2);
+  box-shadow: 0 6px 25px rgba(0, 255, 150, 0.25);
 }
 
 .card-aula img {
   width: 100%;
-  height: 200px;
+  height: 180px;
   object-fit: cover;
   border-bottom: 2px solid #00ffa6;
 }
 
+/* Título */
 .card-aula h3 {
   color: #00ffa6;
   margin: 15px 20px 10px;
@@ -562,6 +567,7 @@ footer a:hover {
   gap: 8px;
 }
 
+/* Texto */
 .card-aula p {
   color: #ccc;
   font-size: 0.95rem;
@@ -570,6 +576,7 @@ footer a:hover {
   flex-grow: 1;
 }
 
+/* Botão */
 .card-aula .btn {
   display: block;
   text-align: center;
@@ -577,7 +584,7 @@ footer a:hover {
   color: #000;
   text-decoration: none;
   padding: 10px;
-  margin: 10px 20px 20px;
+  margin: 0 20px 20px;
   border-radius: 8px;
   font-weight: bold;
   transition: 0.3s ease;
@@ -591,14 +598,15 @@ footer a:hover {
 /* ===== RESPONSIVO ===== */
 @media (max-width: 768px) {
   .container-aulas {
-    grid-template-columns: 1fr;
+    flex-direction: column;
+    align-items: center;
   }
 
-  .card-aula img {
-    height: 180px;
+  .card-aula {
+    width: 90%;
   }
 
-  .titulo-premium {
+  .aulas-premium h2 {
     font-size: 1.8rem;
   }
 }
