@@ -504,9 +504,11 @@ footer a:hover {
 /* ===== AULAS PREMIUM ===== */
 .aulas-premium {
   background: #0b0b0b;
-  padding: 60px 40px 100px; /* espaçamento inferior aumentado */
+  padding: 60px 40px 100px;
   text-align: center;
   color: #e0e0e0;
+  position: relative;
+  overflow: hidden;
 }
 
 .aulas-premium h2 {
@@ -520,35 +522,59 @@ footer a:hover {
   text-shadow: 0 0 10px rgba(0, 255, 150, 0.6);
 }
 
-/* Container com grid horizontal */
+/* Container das aulas */
 .container-aulas {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 30px; /* espaçamento entre os cards */
+  gap: 30px;
   max-width: 1200px;
   margin: 0 auto;
 }
 
-/* Cada card */
+/* Card das aulas */
 .card-aula {
   background: #141414;
   border: 1px solid #00ffa666;
   border-radius: 12px;
   box-shadow: 0 4px 20px rgba(0, 255, 150, 0.08);
-  transition: all 0.3s ease;
+  transition: all 0.4s ease;
   overflow: hidden;
-  width: 300px; /* tamanho fixo e proporcional */
+  width: 300px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  opacity: 0;
+  transform: scale(0.9);
+  animation: fadeInZoom 0.8s ease forwards;
 }
 
+/* Animação de entrada */
+@keyframes fadeInZoom {
+  0% {
+    opacity: 0;
+    transform: scale(0.9) translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.card-aula:nth-child(1) { animation-delay: 0.1s; }
+.card-aula:nth-child(2) { animation-delay: 0.3s; }
+.card-aula:nth-child(3) { animation-delay: 0.5s; }
+.card-aula:nth-child(4) { animation-delay: 0.7s; }
+.card-aula:nth-child(5) { animation-delay: 0.9s; }
+.card-aula:nth-child(6) { animation-delay: 1.1s; }
+
+/* Efeito hover */
 .card-aula:hover {
-  transform: translateY(-6px);
+  transform: translateY(-6px) scale(1.02);
   box-shadow: 0 6px 25px rgba(0, 255, 150, 0.25);
 }
 
+/* Imagem */
 .card-aula img {
   width: 100%;
   height: 180px;
