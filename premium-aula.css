@@ -1,0 +1,92 @@
+/* premium-aula.css
+   Tema escuro + neon verde, responsivo e consistente com o site
+*/
+
+/* reset mínimo */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: #070707;
+  color: #e6e6e6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* NAV */
+.navbar {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:18px 36px;
+  background:#0f0f0f;
+  border-bottom:3px solid rgba(0,255,166,0.06);
+  position:sticky;
+  top:0;
+  z-index:1000;
+}
+.logo { color:#00ffa6; font-weight:800; font-size:1.45rem; letter-spacing:1px; }
+.nav-links{ list-style:none; display:flex; gap:18px; align-items:center; }
+.nav-links a{ color:#ddd; text-decoration:none; font-weight:600; padding:6px 8px; transition:color .18s; }
+.nav-links a.ativo, .nav-links a:hover{ color:#00ffa6; }
+
+/* AULA DETALHE (página individual) */
+.aula-detalhe { max-width:1100px; margin:36px auto; padding:0 20px 80px; }
+.aula-detalhe h1 {
+  color: #00ffa6;
+  font-size:2rem;
+  text-align:center;
+  margin-bottom:20px;
+  text-shadow:0 0 12px rgba(0,255,166,0.18);
+}
+
+/* vídeo */
+.video-wrap { width:100%; max-width:1100px; margin: 0 auto 22px; border-radius:10px; overflow:hidden; box-shadow: 0 8px 30px rgba(0,0,0,0.6); }
+
+/* conteúdo textual */
+.conteudo { background:#0f0f0f; border:1px solid rgba(0,255,166,0.06); padding:22px; border-radius:10px; box-shadow:0 6px 18px rgba(0,0,0,0.6); margin-top:18px; }
+.conteudo h2 { color:#00ffa6; margin-bottom:12px; font-size:1.1rem; }
+.conteudo h3 { color:#00ffa6; margin-top:14px; margin-bottom:8px; font-size:1rem; }
+.conteudo p, .conteudo li { color:#d7d7d7; margin-bottom:10px; line-height:1.6; }
+.conteudo ul { margin-left:18px; margin-bottom:12px; }
+
+/* ações / botão voltar */
+.acoes { text-align:left; margin-top:10px; }
+.btn { display:inline-block; background:#00ffa6; color:#000; padding:10px 18px; border-radius:8px; text-decoration:none; font-weight:700; transition: transform .18s, background .18s; }
+.btn:hover { background:#00cc88; transform:translateY(-3px); }
+
+/* FOOTER */
+.footer { margin-top:40px; padding:22px 16px; border-top:1px solid rgba(0,255,166,0.03); text-align:center; color:#bfbfbf; background: linear-gradient(0deg, rgba(0,0,0,0.6), transparent); }
+
+/* ---- Cards (usado também na página de listagem se quiser) ---- */
+.container-aulas { display:flex; flex-wrap:wrap; gap:28px; justify-content:center; margin:26px auto; max-width:1200px; padding:0 20px 60px; }
+.card-aula {
+  width:300px; background:#121212; border-radius:12px; overflow:hidden; border:1px solid rgba(0,255,166,0.06);
+  box-shadow:0 6px 20px rgba(0,0,0,0.6); display:flex; flex-direction:column; justify-content:space-between;
+  transition: transform .25s, box-shadow .25s;
+}
+.card-aula img{ width:100%; height:180px; object-fit:cover; border-bottom:2px solid rgba(0,255,166,0.06); }
+.card-aula h3{ color:#00ffa6; margin:14px 18px 8px; font-size:1.1rem; }
+.card-aula p{ color:#d4d4d4; margin:0 18px 14px; line-height:1.45; }
+.card-aula .btn{ margin:0 18px 18px; }
+
+/* hover */
+.card-aula:hover{ transform:translateY(-8px); box-shadow:0 12px 34px rgba(0,255,166,0.12); }
+
+/* RESPONSIVO */
+@media (max-width: 900px) {
+  .container-aulas { gap:20px; }
+  .card-aula { width:48%; }
+}
+@media (max-width: 620px) {
+  .card-aula { width:100%; }
+  .aula-detalhe h1 { font-size:1.6rem; }
+  .nav-links { display:none; }
+  .navbar { padding:14px 20px; }
+}
+
+/* animação leve na entrada dos cards (se a listagem usar os cards) */
+@keyframes entry {
+  from { opacity:0; transform:translateY(12px) scale(.98); }
+  to   { opacity:1; transform:translateY(0) scale(1); }
+}
+.card-aula { animation: entry .45s ease both; }
