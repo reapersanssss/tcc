@@ -21,64 +21,49 @@
   </header>
 
   <main>
-    <section class="contato-container fade-in">
-      <h2>Entre em Contato Conosco</h2>
-      <p>Preencha o formulário abaixo e nossa equipe retornará o mais rápido possível.</p>
+   <section class="contato-container">
+  <h2>Entre em Contato</h2>
+  <form>
+    <label for="nome">Nome</label>
+    <input type="text" id="nome" placeholder="Digite seu nome" required>
 
-      <form id="form-contato">
-        <div class="input-group">
-          <label for="nome">Nome</label>
-          <input type="text" id="nome" placeholder="Digite seu nome" required>
-        </div>
+    <label for="email">E-mail</label>
+    <input type="email" id="email" placeholder="Digite seu e-mail" required>
 
-        <div class="input-group">
-          <label for="email">E-mail</label>
-          <input type="email" id="email" placeholder="exemplo@email.com" required>
-        </div>
+    <label for="assunto">Assunto</label>
+    <select id="assunto">
+      <option value="duvida">Dúvida</option>
+      <option value="suporte">Suporte Técnico</option>
+      <option value="parceria">Parceria</option>
+    </select>
 
-        <div class="input-group">
-          <label for="mensagem">Mensagem</label>
-          <textarea id="mensagem" placeholder="Digite sua mensagem..." required></textarea>
-        </div>
+    <label for="mensagem">Mensagem</label>
+    <textarea id="mensagem" rows="5" placeholder="Escreva sua mensagem..." required></textarea>
 
-        <button type="submit" class="btn-enviar">Enviar Mensagem</button>
-      </form>
+    <button type="submit">Enviar Mensagem</button>
+  </form>
 
-      <div id="mensagem-sucesso" class="oculto">
-        <p>✅ Obrigado por entrar em contato! Retornaremos em breve.</p>
-      </div>
-    </section>
-  </main>
+  <div class="contato-info">
+    <h3>📍 Nossos Contatos</h3>
+    <p><strong>E-mail:</strong> contato@powerbody.com</p>
+    <p><strong>Telefone:</strong> (11) 99999-9999</p>
+  </div>
+</section>
 
-   <footer class="footer">
-  <div class="footer-top">
-    <div class="footer-section">
-      <h4>Navegue</h4>
+  <footer class="footer">
+  <div class="footer-container">
+    <div class="footer-logo">
+      <h2>FitLife</h2>
+      <p>Transforme seu corpo e sua mente com nossos treinos personalizados.</p>
+    </div>
+
+    <div class="footer-links">
+      <h4>Links Rápidos</h4>
       <ul>
         <li><a href="index.html">🏠 Home</a></li>
-        <li><a href="aulas.html">💪 Aulas</a></li>
-        <li><a href="planos.html">💰 Planos</a></li>
-        <li><a href="nutricao.html">🥗 Nutrição</a></li>
-      </ul>
-    </div>
-
-    <div class="footer-section">
-      <h4>Recursos</h4>
-      <ul>
-        <li><a href="imc.html">⚖ Calculadora IMC</a></li>
-        <li><a href="contato.html">📩 Contato</a></li>
-        <li><a href="#">💬 Suporte</a></li>
-        <li><a href="#">📰 Blog Fitness</a></li>
-      </ul>
-    </div>
-
-    <div class="footer-section">
-      <h4>Para Usuários</h4>
-      <ul>
-        <li><a href="login.html">🔐 Login</a></li>
-        <li><a href="cadastro.html">🧍‍♂️ Cadastro</a></li>
-        <li><a href="#">👨‍🏫 Personal Trainers</a></li>
-        <li><a href="#">🥦 Nutricionistas</a></li>
+        <li><a href="aulas.html">📚 Aulas</a></li>
+        <li><a href="planos.html">💎 Planos</a></li>
+        <li><a href="contato.html">📞 Contato</a></li>
       </ul>
     </div>
 
@@ -101,25 +86,13 @@
     </a>
   </div>
 </div>
+
   <div class="footer-bottom">
-    <div class="footer-lang">
-      🌎 Português (Brasil)
-    </div>
-    <div class="footer-links">
-      <a href="#">Política de Privacidade</a>
-      <a href="#">Termos de Uso</a>
-      <a href="#">Cookies</a>
-      <a href="#">Acessibilidade</a>
-      <a href="#">Suporte Técnico</a>
-    </div>
-    <p>© 2025 Fitness Pro — Todos os direitos reservados.</p>
+    <p>© 2025 FitLife | Todos os direitos reservados</p>
   </div>
 </footer>
 
-</body>
-</html>
-
+<!-- Font Awesome -->
+<script src="https://kit.fontawesome.com/a2d04b9b55.js" crossorigin="anonymous"></script>
   <script src="contato.js"></script>
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-</body>
 </html>
