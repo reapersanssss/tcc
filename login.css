@@ -93,3 +93,19 @@ button#login-btn:hover {
   from { opacity: 0; transform: translateY(15px); }
   to { opacity: 1; transform: translateY(0); }
 }
+
+/* Destaques no Login */
+.extra-links a,
+.signup-link a {
+  font-weight: bold;
+  color: #00ffc8;
+  text-shadow: 0 0 8px #00ffc8;
+  transition: all 0.3s;
+}
+
+.extra-links a:hover,
+.signup-link a:hover {
+  color: #fff;
+  text-shadow: 0 0 12px #00ffc8, 0 0 24px #00ffc8;
+  transform: scale(1.05);
+}
