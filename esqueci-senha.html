@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Esqueci minha senha — PowerBody</title>
+
+  <style>
+    /* ======== ESTILO GERAL ======== */
+    body {
+      background: url("https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=1600&q=80")
+        no-repeat center center fixed;
+      background-size: cover;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      position: relative;
+    }
+
+    /* Overlay escuro */
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.85);
+      z-index: 0;
+    }
+
+    /* Container do formulário */
+    .form-container {
+      position: relative;
+      z-index: 1;
+      background: rgba(30, 30, 30, 0.95);
+      padding: 35px;
+      border-radius: 12px;
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.6);
+      text-align: center;
+      width: 360px;
+      animation: fadeIn 0.8s ease;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    h2 {
+      color: #00ffc8;
+      margin-bottom: 10px;
+      font-size: 1.8em;
+    }
+
+    p {
+      color: #ccc;
+      margin-bottom: 20px;
+      font-size: 0.95em;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border: none;
+      border-radius: 8px;
+      background: #222;
+      color: #fff;
+      font-size: 1em;
+      outline: none;
+      transition: box-shadow 0.3s;
+    }
+
+    input:focus {
+      box-shadow: 0 0 10px #00ffc8;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background: #00ffc8;
+      color: #000;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s;
+      font-size: 1em;
+    }
+
+    button:hover {
+      background: #00e0b0;
+      transform: translateY(-2px);
+      box-shadow: 0 0 15px #00ffc8;
+    }
+
+    .voltar-link {
+      display: block;
+      margin-top: 15px;
+      color: #00ffc8;
+      text-decoration: none;
+      transition: color 0.3s, transform 0.2s;
+      font-weight: bold;
+    }
+
+    .voltar-link:hover {
+      color: #fff;
+      transform: translateY(-2px);
+    }
+
+    /* Mensagem de sucesso/erro */
+    .mensagem {
+      margin-top: 10px;
+      font-size: 0.95em;
+      color: #00ffc8;
+      text-shadow: 0 0 8px #00ffc8;
+    }
+
+    .mensagem.erro {
+      color: #ff4d4d;
+      text-shadow: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="overlay"></div>
+
+  <div class="form-container">
+    <h2>Recuperar Senha</h2>
+    <p>Insira o e-mail cadastrado para receber o link de redefinição.</p>
+
+    <form id="reset-form">
+      <input type="email" id="email" placeholder="Digite seu e-mail" required />
+      <button type="submit">Enviar link de redefinição</button>
+    </form>
+
+    <div id="mensagem" class="mensagem"></div>
+
+    <a href="login.html" class="voltar-link">← Voltar para o login</a>
+  </div>
+
+  <!-- ======== SUPABASE ======== -->
+  <script type="module">
+    import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
+
+    // 🔹 Configuração — substitua pelos seus dados reais do Supabase
+    const SUPABASE_URL = "https://jwmbpltpmpkqczxdoave.supabase.co";
+    const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imp3bWJwbHRwbXBrcWN6eGRvYXZlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTg1OTEwNDcsImV4cCI6MjA3NDE2NzA0N30.fOIG41NcI5lpop34eg-TsymepReu2PHysu_ESkU5m_Q";
+    const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
+
+    // 🔹 Evento de envio
+    document.getElementById("reset-form").addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const email = document.getElementById("email").value.trim();
+      const msg = document.getElementById("mensagem");
+
+      if (!email) {
+        msg.textContent = "Por favor, insira seu e-mail.";
+        msg.classList.add("erro");
+        return;
+      }
+
+      const { data, error } = await supabase.auth.resetPasswordForEmail(email, {
+        redirectTo: "https://SEU_SITE.com/redefinir-senha.html",
+      });
+
+      if (error) {
+        msg.textContent = "❌ Erro: " + error.message;
+        msg.classList.add("erro");
+      } else {
+        msg.textContent =
+          "✅ Um link de redefinição foi enviado para seu e-mail.";
+        msg.classList.remove("erro");
+      }
+    });
+  </script>
+</body>
+</html>
