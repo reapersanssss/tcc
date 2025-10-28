@@ -35,31 +35,3 @@ document.getElementById('loginForm').addEventListener('submit', async (e) => {
     window.location.href = 'index.html'
   }
 })
-
-document.getElementById('frmLogin').addEventListener('submit', async e=>{
-  e.preventDefault();
-  const fd = new FormData(e.target);
-  const body = { email: fd.get('email'), password: fd.get('password') };
-  const res = await fetch('/api/login',{ method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(body) });
-  const j = await res.json();
-  if (res.ok) {
-    window.location = '/profile.html';
-  } else {
-    alert(j.error || 'Erro');
-  }
-});
-
-// Exemplo de login com Supabase
-async function fazerLogin(email, senha) {
-  const { data, error } = await supabase.auth.signInWithPassword({
-    email: email,
-    password: senha
-  });
-
-  if (error) {
-    alert("Erro ao fazer login: " + error.message);
-  } else {
-    // 🔹 Redireciona para a Home automaticamente
-    window.location.href = "index.html";
-  }
-}
