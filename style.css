@@ -640,11 +640,3 @@ body::before {
   margin: 0;
 }
 
-/* public/styles.css - simples */
-:root{
-  --bg:#0b0b0b; --card:#141414; --accent:#00ffbf; --text:#eee;
-}
-body{background:var(--bg); color:var(--text); font-family:Inter,Arial; margin:0; padding:40px;}
-.auth-card{max-width:420px;margin:40px auto;padding:24px;background:var(--card); border-radius:12px; box-shadow:0 8px 30px rgba(0,0,0,.6); text-align:center;}
-.auth-card input{width:100%;padding:10px;margin:8px 0;border-radius:6px;border:1px solid #222;background:#0f0f0f;color:var(--text);}
-.auth-card button{background:var(--accent);border:none;padding:10px 18px;border-radius:8px;color:#000;font-weight:700;cursor:pointer;}
