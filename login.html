@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login — PowerBody</title>
-  <link rel="stylesheet" href="login.css"> <!-- seu CSS principal -->
+  <link rel="stylesheet" href="style.css"> <!-- seu CSS principal -->
 </head>
 <body>
   <div class="form-container">
@@ -19,24 +19,19 @@
 
       <button type="submit">Entrar</button>
 
+      <!-- 🔸 Botão “Esqueci a senha” -->
+      <div class="extra-links">
+        <a href="esqueci-senha.html" class="forgot-link">Esqueci minha senha</a>
+      </div>
+
+      <p class="signup-link">
+        Não tem uma conta?
+        <a href="cadastro.html">Cadastre-se</a>
+      </p>
+    </form>
+  </div>
+
   <!-- Script do Supabase (mantenha o seu login.js se já tiver) -->
   <script type="module" src="login.js"></script>
- </form>
-    <p><a href="cadastro.html">Criar conta</a> · <a href="esqueci-senha.html">Esqueci a senha</a></p>
-  </main>
-<script>
-document.getElementById('frmLogin').addEventListener('submit', async e=>{
-  e.preventDefault();
-  const fd = new FormData(e.target);
-  const body = { email: fd.get('email'), password: fd.get('password') };
-  const res = await fetch('/api/login',{ method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(body) });
-  const j = await res.json();
-  if (res.ok) {
-    window.location = '/profile.html';
-  } else {
-    alert(j.error || 'Erro');
-  }
-});
-</script>
 </body>
 </html>
