@@ -277,32 +277,3 @@ body::before {
   background: rgba(18, 18, 18, 0.9); /* quase preto translúcido */
   z-index: -1; /* fica atrás do conteúdo */
 }
-
-/* LOGO E NAVBAR */
-.navbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px 40px;
-  background-color: #111;
-  border-bottom: 1px solid #00ffe0;
-}
-
-.logo-container {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.logo-img {
-  width: 45px;    /* ← ajuste o tamanho aqui: experimente 40px, 50px etc */
-  height: auto;
-  border-radius: 6px; /* opcional, deixa os cantos levemente arredondados */
-}
-
-.logo {
-  font-size: 22px;
-  font-weight: 700;
-  color: #00ffe0;
-  margin: 0;
-}
