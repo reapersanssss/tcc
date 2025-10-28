@@ -60,6 +60,6 @@ async function fazerLogin(email, senha) {
     alert("Erro ao fazer login: " + error.message);
   } else {
     // 🔹 Redireciona para a Home automaticamente
-    window.location.href = "/index.html";
+    window.location.href = "index.html";
   }
 }
