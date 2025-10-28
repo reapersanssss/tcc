@@ -33,6 +33,6 @@ document.getElementById('cadastroForm').addEventListener('submit', async (e) => 
     alert('Erro ao cadastrar: ' + error.message)
   } else {
     alert('Cadastro realizado! Verifique seu e-mail para confirmar.')
-    window.location.href = 'login.html'
+    window.location.href = 'index.html'
   }
 })
