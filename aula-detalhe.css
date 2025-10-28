@@ -1,3 +1,201 @@
+/* === RESET UNIVERSAL === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #0b0b0b;
+  color: #f1f1f1;
+  line-height: 1.6;
+}
+
+/* === CABEÇALHO === */
+.topo {
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 50px;
+  border-bottom: 2px solid #00ffbf;
+  box-shadow: 0 3px 10px rgba(0, 255, 200, 0.2);
+}
+
+.topo .logo {
+  font-size: 1.8em;
+  color: #00ffbf;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.topo nav ul {
+  display: flex;
+  list-style: none;
+  gap: 25px;
+}
+
+.topo nav ul li a {
+  text-decoration: none;
+  color: #f1f1f1;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.topo nav ul li a:hover,
+.topo nav ul li a.ativo {
+  color: #00ffbf;
+}
+
+/* === CONTEÚDO PRINCIPAL === */
+.conteudo {
+  max-width: 1000px;
+  margin: 50px auto;
+  padding: 0 20px;
+  animation: fadeIn 0.8s ease;
+}
+
+/* === INTRO === */
+.intro {
+  text-align: center;
+  margin-bottom: 40px;
+  border-bottom: 1px solid rgba(0, 255, 200, 0.3);
+  padding-bottom: 20px;
+}
+
+.intro h1 {
+  color: #00ffbf;
+  font-size: 2.4em;
+  margin-bottom: 10px;
+}
+
+.intro p {
+  color: #ccc;
+  font-size: 1.1em;
+}
+
+/* === CARD UNIVERSAL === */
+.card {
+  background: rgba(20, 20, 20, 0.9);
+  border-left: 4px solid #00ffbf;
+  border-radius: 10px;
+  padding: 25px;
+  margin-bottom: 25px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.6);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 5px 15px rgba(0, 255, 200, 0.25);
+}
+
+.card h2 {
+  color: #00ffbf;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+/* === LISTAS === */
+.card ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.card ul li {
+  margin-bottom: 8px;
+  color: #ddd;
+  font-size: 1.05em;
+}
+
+.card ul li::before {
+  content: "✔ ";
+  color: #00ffbf;
+  font-weight: bold;
+}
+
+/* === VÍDEO === */
+.video-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.video-container iframe {
+  width: 100%;
+  max-width: 700px;
+  height: 390px;
+  border: 2px solid #00ffbf;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 255, 200, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.video-container iframe:hover {
+  transform: scale(1.02);
+}
+
+/* === BOTÃO VOLTAR === */
+.btn-voltar {
+  text-align: center;
+  margin: 40px 0;
+}
+
+.btn-voltar a {
+  display: inline-block;
+  background: #00ffbf;
+  color: #000;
+  text-decoration: none;
+  padding: 12px 25px;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.btn-voltar a:hover {
+  background: #00d6a0;
+  transform: scale(1.05);
+}
+
+/* === RODAPÉ === */
+footer {
+  background: rgba(0, 0, 0, 0.9);
+  text-align: center;
+  padding: 30px 10px;
+  border-top: 2px solid #00ffbf;
+  color: #aaa;
+  font-size: 0.9em;
+  margin-top: 50px;
+}
+
+/* === ANIMAÇÃO === */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* === RESPONSIVIDADE === */
+@media (max-width: 768px) {
+  .topo {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .topo nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .intro h1 {
+    font-size: 2em;
+  }
+
+  .video-container iframe {
+    height: 250px;
+  }
+}
+
 /* === ESTILO UNIVERSAL PARA PÁGINAS DE DETALHES DAS AULAS === */
 
 body {
