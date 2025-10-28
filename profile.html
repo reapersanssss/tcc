@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <title>Perfil • PowerBody</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div id="app">
+    <header><h1>Perfil</h1></header>
+    <section id="profileBox">
+      <img id="avatar" src="/uploads/default.png" width="96" style="border-radius:50%">
+      <h2 id="name"></h2>
+      <p id="email"></p>
+      <p id="adminFlag"></p>
+      <form id="uploadForm">
+        <input type="file" name="avatar" accept="image/*">
+        <button>Enviar avatar</button>
+      </form>
+      <button id="btnLogout">Sair</button>
+    </section>
+  </div>
+
+<script>
+async function loadProfile(){
+  const res = await fetch('/api/me');
+  if (!res.ok) return window.location = '/login.html';
+  const { user } = await res.json();
+  document.getElementById('name').innerText = user.name;
+  document.getElementById('email').innerText = user.email;
+  document.getElementById('avatar').src = user.avatar || '/uploads/default.png';
+  document.getElementById('adminFlag').innerText = user.is_admin ? 'Administrador' : '';
+}
+loadProfile();
+
+document.getElementById('uploadForm').addEventListener('submit', async e=>{
+  e.preventDefault();
+  const f = e.target.avatar.files[0];
+  if (!f) return alert('Selecione arquivo');
+  const fd = new FormData(); fd.append('avatar', f);
+  const res = await fetch('/api/upload-avatar', { method:'POST', body: fd });
+  const j = await res.json();
+  if (res.ok) {
+    document.getElementById('avatar').src = j.avatar;
+  } else alert(j.error || 'Erro');
+});
+
+document.getElementById('btnLogout').addEventListener('click', async ()=>{
+  await fetch('/api/logout', { method: 'POST' });
+  location = '/login.html';
+});
+</script>
+</body>
+</html>
