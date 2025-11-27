@@ -502,3 +502,151 @@ footer a:hover {
 }
 
 
+/* =====================================================
+   RESPONSIVIDADE COMPLETA — MOBILE FIRST
+   Funciona para todas as páginas do seu site
+   Breakpoints: 480px / 768px / 1024px
+===================================================== */
+
+/* ===== AJUSTES GERAIS ===== */
+@media (max-width: 1024px) {
+  body {
+    padding: 0;
+    overflow-x: hidden;
+  }
+
+  header {
+    padding: 12px 20px;
+  }
+
+  header nav a {
+    margin-left: 15px;
+    font-size: 0.95rem;
+  }
+
+  section {
+    padding: 30px 20px;
+  }
+}
+
+/* ===== TABLETS E CELULARES GRANDES ===== */
+@media (max-width: 768px) {
+
+  /* Header em coluna */
+  header {
+    flex-direction: column;
+    text-align: center;
+    gap: 8px;
+  }
+
+  header nav a {
+    margin: 6px;
+    display: inline-block;
+  }
+
+  /* Ajusta grids */
+  .cards-container,
+  .aulas-grid,
+  .prof-grid,
+  .dicas,
+  .planos {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  /* Banner */
+  .banner-explicativo {
+    padding: 50px 20px;
+    height: auto;
+  }
+
+  .banner-explicativo h1 {
+    font-size: 2rem;
+  }
+
+  .banner-sub {
+    font-size: 0.95rem;
+    margin-bottom: 25px;
+  }
+
+  .beneficio {
+    padding: 18px;
+  }
+
+  /* Cards */
+  .card {
+    padding: 18px;
+  }
+
+  /* Vídeos */
+  iframe,
+  .video-container iframe {
+    height: 260px !important;
+    max-width: 100%;
+  }
+
+  /* Login */
+  .login-container {
+    width: 92%;
+    padding: 25px;
+  }
+
+  /* Formulários */
+  form,
+  .contato-container {
+    width: 95%;
+    padding: 18px;
+  }
+
+  footer .footer-container {
+    flex-direction: column;
+    gap: 25px;
+  }
+}
+
+/* ===== CELULARES PEQUENOS (Abaixo de 480px) ===== */
+@media (max-width: 480px) {
+
+  body {
+    font-size: 14px;
+  }
+
+  header nav a {
+    font-size: 0.9rem;
+  }
+
+  .logo {
+    font-size: 1.4rem;
+  }
+
+  .banner-explicativo h1 {
+    font-size: 1.7rem;
+  }
+
+  .banner-sub {
+    font-size: 0.9rem;
+  }
+
+  .banner-btn {
+    padding: 12px 20px;
+    font-size: 1rem;
+  }
+
+  .beneficio h3 {
+    font-size: 1.1rem;
+  }
+
+  /* Botões */
+  .btn,
+  button,
+  input[type="submit"] {
+    padding: 10px 14px;
+    font-size: 0.9rem;
+  }
+
+  /* Espaçamentos */
+  section {
+    margin-top: 20px;
+    padding: 20px 14px;
+  }
+}
