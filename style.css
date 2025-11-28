@@ -640,151 +640,95 @@ body::before {
   margin: 0;
 }
 
-/* =====================================================
-   RESPONSIVIDADE COMPLETA — MOBILE FIRST
-   Funciona para todas as páginas do seu site
-   Breakpoints: 480px / 768px / 1024px
-===================================================== */
-
-/* ===== AJUSTES GERAIS ===== */
-@media (max-width: 1024px) {
-  body {
-    padding: 0;
-    overflow-x: hidden;
-  }
-
-  header {
-    padding: 12px 20px;
-  }
-
-  header nav a {
-    margin-left: 15px;
-    font-size: 0.95rem;
-  }
-
-  section {
-    padding: 30px 20px;
-  }
+/* ===== BANNER HOME ===== */
+.banner-home {
+  background: url("https://images.unsplash.com/photo-1554284126-aa88f22d8b74?auto=format&fit=crop&w=1600&q=80")
+    no-repeat center center;
+  background-size: cover;
+  position: relative;
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
-/* ===== TABLETS E CELULARES GRANDES ===== */
-@media (max-width: 768px) {
-
-  /* Header em coluna */
-  header {
-    flex-direction: column;
-    text-align: center;
-    gap: 8px;
-  }
-
-  header nav a {
-    margin: 6px;
-    display: inline-block;
-  }
-
-  /* Ajusta grids */
-  .cards-container,
-  .aulas-grid,
-  .prof-grid,
-  .dicas,
-  .planos {
-    grid-template-columns: 1fr;
-    gap: 18px;
-  }
-
-  /* Banner */
-  .banner-explicativo {
-    padding: 50px 20px;
-    height: auto;
-  }
-
-  .banner-explicativo h1 {
-    font-size: 2rem;
-  }
-
-  .banner-sub {
-    font-size: 0.95rem;
-    margin-bottom: 25px;
-  }
-
-  .beneficio {
-    padding: 18px;
-  }
-
-  /* Cards */
-  .card {
-    padding: 18px;
-  }
-
-  /* Vídeos */
-  iframe,
-  .video-container iframe {
-    height: 260px !important;
-    max-width: 100%;
-  }
-
-  /* Login */
-  .login-container {
-    width: 92%;
-    padding: 25px;
-  }
-
-  /* Formulários */
-  form,
-  .contato-container {
-    width: 95%;
-    padding: 18px;
-  }
-
-  footer .footer-container {
-    flex-direction: column;
-    gap: 25px;
-  }
+.banner-home::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.78);
 }
 
-/* ===== CELULARES PEQUENOS (Abaixo de 480px) ===== */
-@media (max-width: 480px) {
+.banner-content {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  padding: 20px;
+}
 
-  body {
-    font-size: 14px;
-  }
+.banner-content h1 {
+  color: var(--neon);
+  font-size: 3rem;
+  text-shadow: 0 0 12px rgba(0, 255, 200, 0.35);
+  margin-bottom: 18px;
+}
 
-  header nav a {
-    font-size: 0.9rem;
-  }
+.banner-content p {
+  color: var(--text);
+  font-size: 1.2rem;
+  margin-bottom: 25px;
+}
 
-  .logo {
-    font-size: 1.4rem;
-  }
+.banner-btn {
+  padding: 14px 28px;
+  font-size: 1.2rem;
+  border-radius: 10px;
+}
 
-  .banner-explicativo h1 {
-    font-size: 1.7rem;
-  }
+.como-usar {
+  padding: 60px 20px;
+  text-align: center;
+}
 
-  .banner-sub {
-    font-size: 0.9rem;
-  }
+.como-usar h2 {
+  color: var(--neon);
+  font-size: 2.3rem;
+  margin-bottom: 10px;
+}
 
-  .banner-btn {
-    padding: 12px 20px;
-    font-size: 1rem;
-  }
+.como-usar .sub {
+  color: var(--text-muted);
+  max-width: 800px;
+  margin: 0 auto 40px;
+}
 
-  .beneficio h3 {
-    font-size: 1.1rem;
-  }
+.passos-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+}
 
-  /* Botões */
-  .btn,
-  button,
-  input[type="submit"] {
-    padding: 10px 14px;
-    font-size: 0.9rem;
-  }
+.passo {
+  background: rgba(20,20,20,0.9);
+  padding: 25px;
+  border-radius: 14px;
+  border: 1px solid var(--neon);
+  box-shadow: 0 0 15px rgba(0,255,200,0.18);
+  transition: .3s;
+}
 
-  /* Espaçamentos */
-  section {
-    margin-top: 20px;
-    padding: 20px 14px;
-  }
+.passo:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 25px var(--neon);
+}
+
+.passo h3 {
+  color: var(--neon);
+  margin-bottom: 10px;
+}
+
+.passo p {
+  color: var(--text-muted);
+  line-height: 1.5;
 }
